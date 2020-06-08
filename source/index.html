@@ -2,14 +2,199 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Barbershop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+	<link rel="preload" href="fonts/PTSansNarrow-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/PTSansNarrow-Bold.woff2" as="font">
+
 	<link rel="stylesheet" href="css/style.css">
+	<title>Barbershop</title>
+	<meta name="description" content="Стрижка у нас это выгодно!">
 </head>
-<body>
-	
-	<script src="js/script.js"></script>
 
+<body>
+
+	<!-- Подключаем svg-спрайт -->
+	<div class="svg-sprite" style="display:none;">
+        <include src="build/img/icon.svg"></include>
+	</div>
+	
+	<div class="page-wrapper">
+
+		<header class="header">
+			
+			<a href="#" class="header__logo">
+				<picture>
+					<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
+					<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
+					<img src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
+				</picture>
+			</a>
+		
+			<div class="header__menu menu">
+
+				<ul class="menu__list">
+					<li>Главная</li>
+					<li>Наши работы</li>
+					<li>Записаться</li>
+					<li>Контакты</li>
+					<li>
+						<a href="#">
+							<svg class="menu__login" width="16" height="16">
+								<use xlink:href="#login"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+
+		</header>
+
+		<section class="stats">
+
+			<div class="stats__header secondary">
+				<h2>Стрижка у нас это выгодно</h2>
+				<p>Мужская стрижка требует точного подхода. Обратимся к статистике:</p>
+				<p class="stats__footnote">* - приведённые данные ложь</p>
+			</div>
+
+			<div class="stats__table">
+				<div class="stats__row">
+					<div class="cell">1 500 *</div>
+					<div class="cell">рублей вложений</div>
+				</div>
+				<div class="stats__row">
+					<div class="cell">7 200</div>
+					<div class="cell">секунд времени мастера</div>
+				</div>
+				<div class="stats__row">
+					<div class="cell">90 000</div>
+					<div class="cell">постриженных волос</div>
+				</div>
+				<div class="stats__row">
+					<div class="cell">500 000 *</div>
+					<div class="cell">лайков и комплиментов</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="advantages">
+
+			<p class="advantages__footnote">* - приведённые данные ложь</p>
+
+			<article class="advantages__card advantage">
+				<img src="img/icon/advantages-scissors.svg" width="95" height="94" alt="ALT">
+				<h2 class="advantage__heading">Быстро</h2>
+				<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
+			</article>
+			<article class="advantages__card advantage">
+				<img src="img/icon/advantages-chair.svg" width="95" height="88"  alt="ALT">
+				<h2 class="advantage__heading">Быстро</h2>
+				<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
+			</article>
+			<article class="advantages__card advantage">
+				<img src="img/icon/advantages-signboard.svg" width="95" height="91"  alt="ALT">
+				<h2 class="advantage__heading">Быстро</h2>
+				<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
+			</article>
+
+			<div class="advantages__dots">
+				<button class="advantages__dot advantages__dot--active"></button>
+				<button class="advantages__dot"></button>
+				<button class="advantages__dot"></button>
+			</div>
+
+		</section>
+
+		<section class="news secondary">
+
+			<h2 class="news__heading">Новости и акции</h2>
+
+			<ul class="news__list">
+				<li>
+					<article class="news__item">
+						<p class="news__date"><span>29</span>сент</p>
+						<p class="news__text">
+							Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.
+						</p>
+					</article>
+				</li>
+				<li>
+					<article class="news__item">
+						<p class="news__date"><span>19</span>сент</p>
+						<p class="news__text">
+							В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды. Спешите записаться!
+						</p>
+					</article>
+				</li>
+			</ul>
+
+			<button class="news__button-more">Показать все</button>
+
+		</section>
+
+
+		<section class="reviews secondary">
+
+			<h2 class="reviews__heading">Отзывы о нас</h2>
+			<ul class="reviews__list">
+				<li class="reviews__item">
+					<article class="reviews__card review">
+						<h3 class="review__name">Трэвис Баркер</h3>
+						<p class="review__comment">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+					</article>
+				</li>
+				<li class="reviews__item">
+					<article class="reviews__card review">
+						<h3 class="review__name">Меджик Арроу</h3>
+						<p class="review__comment">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+					</article>
+				</li>
+				<li class="reviews__item">
+					<article class="reviews__card review">
+						<h3 class="review__name">Валентин Галп</h3>
+						<p class="review__comment">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+					</article>
+				</li>
+			</ul>
+			
+			<div class="reviews__dots">
+				<button class="reviews__dot reviews__dot--active"></button>
+				<button class="reviews__dot"></button>
+				<button class="reviews__dot"></button>
+			</div>
+
+		</section>
+
+		<footer class="footer">
+
+			<div class="footer__contacts">
+				<span class="footer__heading">Бабершоп Бородинский</span>
+				<p class="footer__address">г. Москва, ул. Маленковская, д. 42</p>
+				<a class="footer__phone" href="#">+7(499)264-99-09</a>
+			</div>
+
+			<div class="footer__socials social">
+				<span class="social__text">Давайте дружить</span>
+				<a class="social__link social__link--vk" href="#" target="_blank">Открыть нашу страницу "В контакте"</a>
+				<a class="social__link social__link--fb" href="#" target="_blank">Открыть нашу страницу на "Фейсбук"</a>
+				<a class="social__link social__link--ig" href="#" target="_blank">Открыть наш профиль "Инстаграм"</a>
+			</div>
+
+			<div class="footer__development">
+				<footer class="footer__text">Разработано:</footer>
+				<a href="#" target="_blank">Html academy</a>
+			</div>
+			
+		</footer>
+
+	</div>
+
+	<!-- <svg class="page-footer__image" width="27" height="34">
+				<use xlink:href="#icon-htmlacademy"></use>
+	</svg> -->
+
+	<script src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+
+// Разрешения
+$mobile-width: 280px;
+$mobile-padding: 20px;
+$mobile: $mobile-width + $mobile-padding + $mobile-padding;
+
+$tablet-width: 640px;
+$table-padding: 32px;
+$tablet: $tablet-width + $table-padding + $table-padding;
+
+$desktop-width: 960px;
+$desktop-padding: 120px;
+$desktop: $desktop-width + $desktop-padding + $desktop-padding;
+
+
+// 1. Global
+// ---------
+
+$main-color: #826550;
+$secondary-color: #f8f5f2;
+$success-color: #3adb76;
+$warning-color: #ffae00;
+$alert-color: #ec5840;
+$light-gray: #4e4e4e;
+$medium-gray: #404040;
+$dark-gray: #242424;
+$black: #0a0a0a;
+$white: #fefefe;
+$background-color: $dark-gray;
+
+
+// 4. Typography
+// -------------
+
+$body-font-family: 'PT Sans Narrow', 'Open Sans', sans-serif;
+$font-color: #f7f4f1;
+$font-weight: normal;
+$line-height: 1.3;
+$font-size: 18px;
+$h1-font-size: 34px;
+$h2-font-size: 30px;
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+$small-font-color: $medium-gray;
+$link-text-decoration: none;
+$link-color: $main-color;
+$link-color-visited: $link-color;
+$link-color-hover: darken($main-color, 10%);
+$link-color-active: $link-color-hover;

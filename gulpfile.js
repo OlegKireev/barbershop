@@ -2,6 +2,7 @@
 
 var	gulp        	= require('gulp');
 var	sass        	= require('gulp-sass');
+sass.compiler 		= require('node-sass');
 var	browserSync		= require('browser-sync');
 var	concat      	= require('gulp-concat');
 var	uglify      	= require('gulp-uglify');
@@ -21,6 +22,18 @@ var	include			= require('posthtml-include');
 var	cheerio 		= require('gulp-cheerio');
 var htmlmin 		= require('gulp-htmlmin');
 var webp 			= require('gulp-webp');
+
+
+// gulp.task('scss', function () {
+//   return gulp.src('./sass/**/*.scss')
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(gulp.dest('./css'));
+// });
+ 
+// gulp.task('sass:watch', function () {
+//   gulp.watch('./sass/**/*.scss', ['sass']);
+// });
+
 
 // Включение browser-sync
 gulp.task('browser-sync', function() {
@@ -124,7 +137,7 @@ gulp.task('js', function() {
 // Создание svg спрайта
 gulp.task('sprite', function () {
     return gulp
-        .src('source/img/sprite/*.svg') // Берем все .svg файлы из папки img/sprite исходников
+        .src('source/img/icon/*.svg') // Берем все .svg файлы из папки img/icon исходников
         .pipe(svgmin(function (file) {
             var prefix = path.basename(file.relative, path.extname(file.relative));
             return {
