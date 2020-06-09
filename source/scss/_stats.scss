@@ -1,0 +1,75 @@
+.stats__inner {
+    background-color: #353535;
+}
+
+.stats__header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: $mobile-padding;
+    padding-right: $mobile-padding;
+    text-align: center;
+}
+
+.stats__heading {
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-transform: uppercase;
+}
+
+.stats__text {
+    font-size: 20px;
+}
+
+.stats__footnote {
+    @include visually-hidden;
+}
+
+.stats__table {
+    background-color: #353535;
+    color: $white;
+    
+}
+
+.stats__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 23px;
+    padding-bottom: 24px;
+    padding-left: $mobile-padding;
+    padding-right: $mobile-padding;
+
+    &:first-child {
+        background-color: #404040;  
+    }
+
+    &:nth-child(2) {
+        background-color: #4e4e4e;  
+    }
+
+    &:nth-child(3) {
+        background-color: #353535;  
+    }
+
+    &:nth-child(4) {
+        background-color: #404040;  
+    }
+}
+
+.stats__cell {
+    width: 50%;
+
+    // Цифры
+    &:first-child {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    // Описание
+    &:last-child {
+        width: 40%;
+        text-align: right;
+    }
+}
+

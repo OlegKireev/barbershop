@@ -5,8 +5,8 @@ $mobile-padding: 20px;
 $mobile: $mobile-width + $mobile-padding + $mobile-padding;
 
 $tablet-width: 640px;
-$table-padding: 32px;
-$tablet: $tablet-width + $table-padding + $table-padding;
+$tablet-padding: 64px;
+$tablet: $tablet-width + $tablet-padding + $tablet-padding;
 
 $desktop-width: 960px;
 $desktop-padding: 120px;
@@ -47,5 +47,5 @@ $small-font-color: $medium-gray;
 $link-text-decoration: none;
 $link-color: $white;
 $link-color-visited: $link-color;
-$link-color-hover: darken($white, 50%);
+$link-color-hover: $white;
 $link-color-active: $link-color-hover;

@@ -1,0 +1,17 @@
+.page-wrapper {
+    margin: 0 auto;
+    max-width: $tablet;
+    // padding-left: $mobile-padding;
+    // padding-right: $mobile-padding;
+
+    @include tablet {
+        max-width: $desktop;
+        padding-left: $tablet-padding;
+        padding-right: $tablet-padding;
+
+        @include desktop {
+            padding-left: $desktop-padding;
+            padding-right: $desktop-padding;
+        }
+    }
+}

@@ -84,26 +84,28 @@ body {
         text-decoration: $link-text-decoration;
         color: $link-color;
 
-        &:visited {
-            color: $link-color-visited;
-        }
+        // &:visited {
+        //     color: $link-color-visited;
+        // }
 
-        &:hover {
-            color: $link-color-hover;
-        }
+        // &:hover {
+        //     color: $link-color-hover;
+        // }
 
-        &:active,
-        &:focus {
-            color: $link-color-active;
-        }
+        // &:active,
+        // &:focus {
+        //     color: $link-color-active;
+        // }
     }
 
     ul {
         padding-left: 0;
+        margin: 0;
     }
 
     ol {
         padding-left: 0;
+        margin: 0;
     }
 
     li {

@@ -1,0 +1,17 @@
+.header {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.header__logo {
+    margin-bottom: 30px;
+
+    @include tablet {
+        width: 370px;
+        height: 101px;
+    }
+
+    @include desktop {
+        height: 153px;
+    }
+}

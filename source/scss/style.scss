@@ -2,8 +2,7 @@
 @import "_variables.scss";
 @import "_mixin.scss";
 @import "_common.scss";
+@import "_page-wrapper";
 @import "_menu.scss";
-
-body {
-    // color: red;
-}
+@import "_header.scss";
+@import "_stats.scss";

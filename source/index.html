@@ -23,27 +23,28 @@
 
 		<header class="header">
 			
-			<a href="#" class="header__logo">
+			<a href="#" class="header__link">
 				<picture>
 					<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
 					<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
-					<img src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
+					<img class="header__logo" src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
 				</picture>
 			</a>
 		
 			<div class="header__menu menu">
 
 				<ul class="menu__list">
-					<button class="menu__button menu__button--closed">Показать меню</button>
-					<li><a href="#">Главная</a></li>
-					<li><a href="#">Наши работы</a></li>
-					<li><a href="#">Записаться</a></li>
-					<li><a href="#">Контакты</a></li>
+					<button class="menu__button menu__button--opened">Показать меню<span class="menu__icon menu__icon--opened"></span></button>
+					<li><a class="menu__link" href="#">Главная</a></li>
+					<li><a class="menu__link" href="#">Наши работы</a></li>
+					<li><a class="menu__link" href="#">Записаться</a></li>
+					<li><a class="menu__link" href="#">Контакты</a></li>
 					<li>
-						<a href="#">
+						<a class="menu__link" href="#">
 							<svg class="menu__login" width="16" height="16">
 								<use xlink:href="#login"></use>
 							</svg>
+							<span>Войти</span>
 						</a>
 					</li>
 				</ul>
@@ -53,30 +54,33 @@
 		</header>
 
 		<section class="stats">
+			<div class="stats__inner">
 
-			<div class="stats__header secondary">
-				<h2>Стрижка у нас это выгодно</h2>
-				<p>Мужская стрижка требует точного подхода. Обратимся к статистике:</p>
-				<p class="stats__footnote">* - приведённые данные ложь</p>
-			</div>
+				<div class="stats__header secondary">
+					<h2 class="stats__heading">Стрижка у нас это выгодно</h2>
+					<p class="stats__text">Мужская стрижка требует точного подхода. Обратимся к статистике:</p>
+					<p class="stats__footnote">* - приведённые данные ложь</p>
+				</div>
 
-			<div class="stats__table">
-				<div class="stats__row">
-					<div class="cell">1 500 *</div>
-					<div class="cell">рублей вложений</div>
+				<div class="stats__table">
+					<div class="stats__row">
+						<div class="stats__cell"><span>1 500*</span></div>
+						<div class="stats__cell">рублей <br>вложений</div>
+					</div>
+					<div class="stats__row">
+						<div class="stats__cell"><span>7 200</span></div>
+						<div class="stats__cell">секунд <br>времени мастера</div>
+					</div>
+					<div class="stats__row">
+						<div class="stats__cell"><span>90 000</span></div>
+						<div class="stats__cell">постриженных волос</div>
+					</div>
+					<div class="stats__row">
+						<div class="stats__cell"><span>500 000*</span></div>
+						<div class="stats__cell">лайков и комплиментов</div>
+					</div>
 				</div>
-				<div class="stats__row">
-					<div class="cell">7 200</div>
-					<div class="cell">секунд времени мастера</div>
-				</div>
-				<div class="stats__row">
-					<div class="cell">90 000</div>
-					<div class="cell">постриженных волос</div>
-				</div>
-				<div class="stats__row">
-					<div class="cell">500 000 *</div>
-					<div class="cell">лайков и комплиментов</div>
-				</div>
+
 			</div>
 		</section>
 
