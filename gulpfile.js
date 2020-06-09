@@ -24,17 +24,6 @@ var htmlmin 		= require('gulp-htmlmin');
 var webp 			= require('gulp-webp');
 
 
-// gulp.task('scss', function () {
-//   return gulp.src('./sass/**/*.scss')
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(gulp.dest('./css'));
-// });
- 
-// gulp.task('sass:watch', function () {
-//   gulp.watch('./sass/**/*.scss', ['sass']);
-// });
-
-
 // Включение browser-sync
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -50,7 +39,7 @@ gulp.task('browser-sync', function() {
 // Конвертация SCSS в CSS
 gulp.task('sass', function() {
 	return gulp.src('source/scss/**/*.scss') // Берем все .scss файлы в данной папке
-	.pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
+	.pipe(sass({outputStyle: 'expanded'}).on('error', notify.onError()))
 	.pipe(autoprefixer(['last 2 versions'])) // Расставляем префиксы к свойствам
 	.pipe(gulp.dest('build/css/')) // Кладем в папку сборки
 	.pipe(rename({suffix: '.min', prefix : ''})) // Добавляем префикс к файлу
@@ -176,12 +165,13 @@ gulp.task('posthtml', function () {
 // Отслеживаем за изменениями
 gulp.task('watch', function(cb) {
 	gulp.parallel('browser-sync')(cb); // Запускаем browser-sync
-	gulp.watch('source/sass/**/*.scss', gulp.series('sass')); // При сохранении любого .scss файла выполнить таск 'sass'
+	// gulp.watch('source/sass/**/*.scss', gulp.series('sass')); // При сохранении любого .scss файла выполнить таск 'sass'
 	gulp.watch(['source/libs/**/*.js', 'source/js/*.js'], gulp.series('js')); // При сохранении любого .js файла выполнить таск 'js'
 	gulp.watch('source/**/*.html', gulp.series('posthtml')); // При сохранении любого .html файла выполнить таск 'posthtml'
 	gulp.watch('source/img/**/*', gulp.series('sprite', 'posthtml', 'img')); // При изменении (добавлении и удалении) любого изображения из папки исходников выполнить таск 'img', также пересобирает svg спрайт
 	gulp.watch('source/img/**/*', gulp.series('img-photos'));
-	gulp.watch('source/**/*').on('change', browserSync.reload); // При изменении любого .html файла обновить страницу
+	gulp.watch('source/**/*').on('change', gulp.parallel('sass', browserSync.reload)); // При изменении любого .html файла обновить страницу
+	// ВЫНУЖДЕНО вставил sass компиляцию вместе с обновлением страницы, отдельно не запускалась
 });
 
 // Сборка проекта
