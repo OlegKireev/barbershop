@@ -54,7 +54,6 @@
 		</header>
 
 		<section class="stats">
-			<div class="stats__inner">
 
 				<div class="stats__header secondary">
 					<h2 class="stats__heading">Стрижка у нас это выгодно</h2>
@@ -81,27 +80,33 @@
 					</div>
 				</div>
 
-			</div>
 		</section>
 
 		<section class="advantages">
 
 			<p class="advantages__footnote">* - приведённые данные ложь</p>
 
-			<article class="advantages__card advantage">
-				<img src="img/icon/advantages-scissors.svg" width="95" height="94" alt="ALT">
+			<article class="advantages__card advantage advantage--active">
+				<svg class="advantage__icon" width="95" height="94">
+					<use xlink:href="#advantages-scissors"></use>
+				</svg>
 				<h2 class="advantage__heading">Быстро</h2>
 				<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
 			</article>
-			<article class="advantages__card advantage">
-				<img src="img/icon/advantages-chair.svg" width="95" height="88"  alt="ALT">
-				<h2 class="advantage__heading">Быстро</h2>
-				<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
+			<article class="advantages__card advantage display-none">
+				<svg class="advantage__icon" width="95" height="88">
+					<use xlink:href="#advantages-chair"></use>
+				</svg>
+				<h2 class="advantage__heading">Круто</h2>
+				<p class="advantage__text">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.
+				</p>
 			</article>
-			<article class="advantages__card advantage">
-				<img src="img/icon/advantages-signboard.svg" width="95" height="91"  alt="ALT">
-				<h2 class="advantage__heading">Быстро</h2>
-				<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
+			<article class="advantages__card advantage display-none">
+				<svg class="advantage__icon" width="95" height="91">
+					<use xlink:href="#advantages-signboard"></use>
+				</svg>
+				<h2 class="advantage__heading">Дорого</h2>
+				<p class="advantage__text">Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?</p>
 			</article>
 
 			<div class="advantages__dots">
@@ -113,30 +118,32 @@
 		</section>
 
 		<section class="news secondary">
+			<div class="news__inner">
 
-			<h2 class="news__heading">Новости и акции</h2>
+				<h2 class="news__heading">Новости и акции</h2>
 
-			<ul class="news__list">
-				<li>
-					<article class="news__item">
-						<p class="news__date"><span>29</span>сент</p>
-						<p class="news__text">
-							Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.
-						</p>
-					</article>
-				</li>
-				<li>
-					<article class="news__item">
-						<p class="news__date"><span>19</span>сент</p>
-						<p class="news__text">
-							В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды. Спешите записаться!
-						</p>
-					</article>
-				</li>
-			</ul>
+				<ul class="news__list">
+					<li>
+						<article class="news__item">
+							<p class="news__date"><span>29</span>сент</p>
+							<p class="news__text">
+								Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.
+							</p>
+						</article>
+					</li>
+					<li>
+						<article class="news__item">
+							<p class="news__date"><span>19</span>сент</p>
+							<p class="news__text">
+								В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды. Спешите записаться!
+							</p>
+						</article>
+					</li>
+				</ul>
 
-			<button class="news__button-more">Показать все</button>
+				<button class="news__button">Показать все</button>
 
+			</div>
 		</section>
 
 
@@ -145,21 +152,42 @@
 			<h2 class="reviews__heading">Отзывы о нас</h2>
 			<ul class="reviews__list">
 				<li class="reviews__item">
-					<article class="reviews__card review">
-						<h3 class="review__name">Трэвис Баркер</h3>
-						<p class="review__comment">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+					<article class="reviews__card review review--active">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
+							<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
+							<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
+						</picture>
+						<div class="review__wrapper">
+							<h3 class="review__name">Трэвис Баркер</h3>
+							<p class="review__text">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+						</div>
 					</article>
 				</li>
 				<li class="reviews__item">
 					<article class="reviews__card review">
-						<h3 class="review__name">Меджик Арроу</h3>
-						<p class="review__comment">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
+							<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
+							<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
+						</picture>
+						<div class="review__wrapper">
+							<h3 class="review__name">Мэджик Эрроу</h3>
+							<p class="review__text">Безупречная работа мастеров. Если не тратить четверть своей зарплаты на волосы, так на что еще?</p>
+						</div>
 					</article>
 				</li>
 				<li class="reviews__item">
 					<article class="reviews__card review">
-						<h3 class="review__name">Валентин Галп</h3>
-						<p class="review__comment">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
+							<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
+							<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
+						</picture>
+						<div class="review__wrapper">
+							<h3 class="review__name">Валентин Галп</h3>
+							<p class="review__text">Можно прямо во время стрижки зарубиться с мастером в Mortal Kombat на Playstation, я тащу за бараку!</p>
+						</div>
 					</article>
 				</li>
 			</ul>
@@ -177,19 +205,36 @@
 			<div class="footer__contacts">
 				<span class="footer__heading">Бабершоп Бородинский</span>
 				<p class="footer__address">г. Москва, ул. Маленковская, д. 42</p>
-				<a class="footer__phone" href="#">+7(499)264-99-09</a>
+				<a class="footer__link" href="#">+7(499)264-99-09</a>
 			</div>
 
 			<div class="footer__socials social">
 				<span class="social__text">Давайте дружить</span>
-				<a class="social__link social__link--vk" href="#" target="_blank">Открыть нашу страницу "В контакте"</a>
-				<a class="social__link social__link--fb" href="#" target="_blank">Открыть нашу страницу на "Фейсбук"</a>
-				<a class="social__link social__link--ig" href="#" target="_blank">Открыть наш профиль "Инстаграм"</a>
+				<div class="social__wrapper">
+					<a class="social__link social__link--vk" href="#" target="_blank">
+						Открыть нашу страницу "В контакте"
+						<svg class="social__icon social__icon--vk" width="25" height="25">
+							<use xlink:href="#socials-vk"></use>
+						</svg>
+					</a>
+					<a class="social__link social__link--fb" href="#" target="_blank">
+						Открыть нашу страницу на "Фейсбук"
+						<svg class="social__icon social__icon--facebook" width="25" height="25">
+							<use xlink:href="#socials-facebook"></use>
+						</svg>
+					</a>
+					<a class="social__link social__link--ig" href="#" target="_blank">
+						Открыть наш профиль "Инстаграм"
+						<svg class="social__icon social__icon--instagram" width="25" height="25">
+							<use xlink:href="#socials-instagram"></use>
+						</svg>
+					</a>
+				</div>
 			</div>
 
 			<div class="footer__development">
 				<footer class="footer__text">Разработано:</footer>
-				<a href="#" target="_blank">Html academy</a>
+				<a class="footer__link" href="#" target="_blank">Html academy</a>
 			</div>
 			
 		</footer>
@@ -198,7 +243,7 @@
 
 	<!-- <svg class="page-footer__image" width="27" height="34">
 				<use xlink:href="#icon-htmlacademy"></use>
-	</svg> -->
+		</svg> -->
 
 	<script src="js/script.js"></script>
 </body>

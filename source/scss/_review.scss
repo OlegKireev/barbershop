@@ -1,0 +1,22 @@
+.review {
+    &--active {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.review__photo {
+    display: block;
+    position: relative;
+    top: 10px;
+}
+
+.review__wrapper {
+    margin-left: 20px;
+    text-align: left;
+    max-width: 75%;
+}
+
+.review__text {
+    line-height: 27px;
+}

@@ -1,0 +1,22 @@
+.social {
+}
+
+.social__text {
+    display: none;
+}
+.social__wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.social__link {
+    display: block;
+    width: 100%;
+    font-size: 0;
+    padding: 37px;
+    border: 1px solid #3f3f3f;
+}
+
+.social__icon {
+    fill: $white;
+}

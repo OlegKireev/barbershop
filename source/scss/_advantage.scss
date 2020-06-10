@@ -1,0 +1,26 @@
+.advantage {
+    padding-left: $mobile-padding;
+    padding-right: $mobile-padding;
+    opacity: 0;
+    transition: ease opacity 0.2s;
+
+    &--active {
+        opacity: 1;
+    }
+}
+
+.advantage__icon {
+    margin-bottom: 30px;
+    min-height: 94px;
+    fill: $main-color;
+}
+
+.advantage__heading {
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.advantage__text {
+    margin-bottom: 25px;
+    font-size: 20px;
+}

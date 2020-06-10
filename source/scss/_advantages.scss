@@ -1,0 +1,33 @@
+.advantages {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.advantages__footnote {
+    margin-bottom: 30px;
+    font-size: 20px;
+    opacity: 0.3;
+}
+
+.advantages__dot {
+    border: 1px solid $white;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    transform: rotate(45deg);
+    opacity: 0.5;
+    transition: ease all 0.2s;
+
+
+    &:not(:last-child) {
+        margin-right: 23px;
+    }
+
+    &--active {
+        background-color: $white;
+        opacity: 1;
+
+    }
+}

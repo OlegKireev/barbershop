@@ -1,0 +1,57 @@
+.reviews {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    padding-left: $mobile-padding;
+    padding-right: $mobile-padding;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 110px;
+        background: url('../img/icon/black-triangle.svg') 50% 50% no-repeat;
+        background-size: cover;
+        pointer-events: none;
+    }
+}
+
+.reviews__heading {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.reviews__card {
+    margin-bottom: 20px;
+}
+
+.reviews__dots {
+    margin-bottom: 30px;
+}
+.reviews__dot {
+    border: 1px solid #353535;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    transform: rotate(45deg);
+    opacity: 0.5;
+    transition: ease all 0.2s;
+
+
+    &:not(:last-child) {
+        margin-right: 23px;
+    }
+
+    &--active {
+        background-color: #353535;
+        opacity: 1;
+    }
+}
+
+// .reviews__triangle {
+//     fill: $main-color;
+// }
