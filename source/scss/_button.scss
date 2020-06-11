@@ -1,0 +1,20 @@
+.button {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 14px;
+    background: transparent;
+    border: 1px solid #e5ddd5;
+    cursor: pointer;
+    outline: none;
+    
+    &:hover,
+    &:focus {
+        border-color: #d5cabe;
+    }
+    
+    &:active {
+        background-color: #d5c9bd;
+        color: rgba(0,0,0,0.3);
+    }
+}

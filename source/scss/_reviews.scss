@@ -16,12 +16,80 @@
         background: url('../img/icon/black-triangle.svg') 50% 50% no-repeat;
         background-size: cover;
         pointer-events: none;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        padding-left: $tablet-padding;
+        padding-right: $tablet-padding;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
 .reviews__heading {
     text-transform: uppercase;
     margin-bottom: 20px;
+
+    @include tablet {
+        font-size: 40px;
+        width: auto;
+        margin-bottom: 0;
+        text-align: left;
+    }
+}
+
+.reviews__button {
+    display: none;
+    
+    @include tablet {
+        display: block;
+        width: 25%;
+        
+        
+        &--previous,
+        &--next {
+            position: relative;
+            width: 50px;
+            height: 160px;
+            font-size: 0;
+            padding: 0;
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background: url('../img/icon/left-arrow.svg');
+                width: 12px;
+                height: 12px;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        &--next {
+            &::before {
+                transform: translate(-50%, -50%) rotate(180deg);
+                
+            }
+        }
+    }
+}
+
+.reviews__wrapper {
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
 }
 
 .reviews__card {
@@ -30,6 +98,15 @@
 
 .reviews__dots {
     margin-bottom: 30px;
+
+    @include tablet {
+        position: relative;
+        top: -33px;
+        width: 125px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #f8f5f2;
+    }
 }
 .reviews__dot {
     border: 1px solid #353535;

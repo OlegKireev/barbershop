@@ -39,19 +39,25 @@
 					<button class="menu__button">Показать меню<span class="menu__icon"></span></button>
 					<nav>
 						<ul class="menu__list">
-							<li><a class="menu__link" href="#">Главная</a></li>
+							<li><a class="menu__link menu__link--active" href="#">Главная</a></li>
 							<li><a class="menu__link" href="#">Наши работы</a></li>
 							<li><a class="menu__link" href="#">Записаться</a></li>
 							<li><a class="menu__link" href="#">Контакты</a></li>
 							<li>
-								<a class="menu__link menu__link--login" href="#">
-									<svg class="menu__login" width="16" height="16">
-										<use xlink:href="#login"></use>
-									</svg>
-									<span>Войти</span>
-								</a>
+								<ul class="menu__login">
+									<li>
+										<a class="menu__link menu__link--login" href="#">
+											<svg class="menu__login-icon" width="16" height="16">
+												<use xlink:href="#login"></use>
+											</svg>
+											<span>Войти</span>
+										</a>
+									</li>
+								</ul>
+								
 							</li>
 						</ul>
+						
 					</nav>
 	
 				</div>
@@ -151,16 +157,16 @@
 				<h2 class="news__heading">Новости и акции</h2>
 
 				<ul class="news__list">
-					<li>
-						<article class="news__item">
+					<li class="news__item">
+						<article class="news__card">
 							<p class="news__date"><span>29</span>сент</p>
 							<p class="news__text">
 								Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.
 							</p>
 						</article>
 					</li>
-					<li>
-						<article class="news__item">
+					<li class="news__item">
+						<article class="news__card">
 							<p class="news__date"><span>19</span>сент</p>
 							<p class="news__text">
 								В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды. Спешите записаться!
@@ -169,7 +175,7 @@
 					</li>
 				</ul>
 
-				<button class="news__button">Показать все</button>
+				<button class="news__button button">Показать все</button>
 
 			</div>
 		</section>
@@ -178,47 +184,53 @@
 		<section class="reviews secondary">
 
 			<h2 class="reviews__heading">Отзывы о нас</h2>
-			<ul class="reviews__list">
-				<li class="reviews__item">
-					<article class="reviews__card review review--active">
-						<picture>
-							<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
-							<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
-							<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
-						</picture>
-						<div class="review__wrapper">
-							<h3 class="review__name">Трэвис Баркер</h3>
-							<p class="review__text">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
-						</div>
-					</article>
-				</li>
-				<li class="reviews__item">
-					<article class="reviews__card review">
-						<picture>
-							<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
-							<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
-							<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
-						</picture>
-						<div class="review__wrapper">
-							<h3 class="review__name">Мэджик Эрроу</h3>
-							<p class="review__text">Безупречная работа мастеров. Если не тратить четверть своей зарплаты на волосы, так на что еще?</p>
-						</div>
-					</article>
-				</li>
-				<li class="reviews__item">
-					<article class="reviews__card review">
-						<picture>
-							<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
-							<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
-							<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
-						</picture>
-						<div class="review__wrapper">
-							<h3 class="review__name">Валентин Галп</h3>
-							<p class="review__text">Можно прямо во время стрижки зарубиться с мастером в Mortal Kombat на Playstation, я тащу за бараку!</p>
-						</div>
-					</article>
-				</li>
-			</ul>
+			<button class="reviews__button button" type="button">Оставить свой</button>
+			<div class="reviews__wrapper">
+				<button class="reviews__button reviews__button--previous button" type="button">Предыдущий отзыв</button>
+				<ul class="reviews__list">
+					<li class="reviews__item">
+						<article class="reviews__card review review--active">
+							<picture>
+								<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
+								<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
+								<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
+							</picture>
+							<div class="review__wrapper">
+								<h3 class="review__name">Трэвис Баркер</h3>
+								<p class="review__text">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+							</div>
+						</article>
+					</li>
+					<li class="reviews__item">
+						<article class="reviews__card review">
+							<picture>
+								<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
+								<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
+								<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
+							</picture>
+							<div class="review__wrapper">
+								<h3 class="review__name">Мэджик Эрроу</h3>
+								<p class="review__text">Безупречная работа мастеров. Если не тратить четверть своей зарплаты на волосы, так на что еще?</p>
+							</div>
+						</article>
+					</li>
+					<li class="reviews__item">
+						<article class="reviews__card review">
+							<picture>
+								<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
+								<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
+								<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
+							</picture>
+							<div class="review__wrapper">
+								<h3 class="review__name">Валентин Галп</h3>
+								<p class="review__text">Можно прямо во время стрижки зарубиться с мастером в Mortal Kombat на Playstation, я тащу за бараку!</p>
+							</div>
+						</article>
+					</li>
+				</ul>
+				<button class="reviews__button reviews__button--next button" type="button">Следующий отзыв</button>
+				
+			</div>
 			
 			<div class="reviews__dots">
 				<button class="reviews__dot reviews__dot--active"></button>
@@ -229,42 +241,45 @@
 		</section>
 
 		<footer class="footer">
+			<div class="footer__inner">
 
-			<div class="footer__contacts">
-				<span class="footer__heading">Бабершоп Бородинский</span>
-				<p class="footer__address">г. Москва, ул. Маленковская, д. 42</p>
-				<a class="footer__link" href="#">+7(499)264-99-09</a>
-			</div>
-
-			<div class="footer__socials social">
-				<span class="social__text">Давайте дружить</span>
-				<div class="social__wrapper">
-					<a class="social__link social__link--vk" href="#" target="_blank">
-						Открыть нашу страницу "В контакте"
-						<svg class="social__icon social__icon--vk" width="25" height="25">
-							<use xlink:href="#socials-vk"></use>
-						</svg>
-					</a>
-					<a class="social__link social__link--fb" href="#" target="_blank">
-						Открыть нашу страницу на "Фейсбук"
-						<svg class="social__icon social__icon--facebook" width="25" height="25">
-							<use xlink:href="#socials-facebook"></use>
-						</svg>
-					</a>
-					<a class="social__link social__link--ig" href="#" target="_blank">
-						Открыть наш профиль "Инстаграм"
-						<svg class="social__icon social__icon--instagram" width="25" height="25">
-							<use xlink:href="#socials-instagram"></use>
-						</svg>
-					</a>
+				<div class="footer__contacts">
+					<span class="footer__heading">Бабершоп Бородинский</span>
+					<p class="footer__address">г. Москва, ул. Маленковская, д. 42</p>
+					<p class="footer__phone">Тел.: +7 (499) 264-99-09</p>
+					<a class="footer__link footer__link--phone" href="tel:+74992649909">+7(499)264-99-09</a>
 				</div>
-			</div>
+	
+				<div class="footer__socials social">
+					<span class="social__text">Давайте дружить</span>
+					<div class="social__wrapper">
+						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank">
+							Открыть нашу страницу "В контакте"
+							<svg class="social__icon social__icon--vk" width="25" height="25">
+								<use xlink:href="#socials-vk"></use>
+							</svg>
+						</a>
+						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank">
+							Открыть нашу страницу на "Фейсбук"
+							<svg class="social__icon social__icon--facebook" width="25" height="25">
+								<use xlink:href="#socials-facebook"></use>
+							</svg>
+						</a>
+						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank">
+							Открыть наш профиль "Инстаграм"
+							<svg class="social__icon social__icon--instagram" width="25" height="25">
+								<use xlink:href="#socials-instagram"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+	
+				<div class="footer__development">
+					<footer class="footer__text">Разработано:</footer>
+					<a class="footer__link" href="https://htmlacademy.ru/" target="_blank">Html academy</a>
+				</div>
 
-			<div class="footer__development">
-				<footer class="footer__text">Разработано:</footer>
-				<a class="footer__link" href="#" target="_blank">Html academy</a>
-			</div>
-			
+			</div>		
 		</footer>
 
 	</div>

@@ -1,8 +1,6 @@
 
 .menu {
     position: relative;
-    
-
 }
 
 .menu__link {
@@ -11,14 +9,14 @@
     font-weight: bold;
     text-transform: uppercase;
     text-align: left;
-
     background-color: $main-color;
     box-shadow: inset 0 -1px 0 0 darken($main-color, 5%),
                 inset 0 -2px 0 0 lighten($main-color, 5%);
-    // transition: all 0.2s ease;
+    transition: color 0.2s ease;
+    outline: none;
 
     &--active {
-        text-align: center;
+        // text-align: center;
     }
 
     &--login {
@@ -40,14 +38,38 @@
         background-color: $black;
         box-shadow: none;
 
-        &:hover {
+        &--active {
+            box-shadow:  0 3px 0 0 $main-color;
+        }
+
+        &:hover,
+        &:focus {
             background: transparent;
-            box-shadow: inset 0 -3px 0 0 darken($main-color, 5%);
+            color: $main-color;
+        }
+
+        // Кнопки логина
+        &:hover .menu__login-icon,
+        &:focus .menu__login-icon{
+            fill: $main-color;
+        }
+
+        &:active .menu__login-icon {
+            opacity: 0.3;
+        }
+
+        &:active {
+            opacity: 0.3;
         }
 
         &--login {
             background-color: transparent;
             font-size: 0;
+            opacity: 0.3;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 }
@@ -72,7 +94,7 @@
     right: 0;
     width: 250px;
     margin-left: auto;
-    // transition: all 0.2s ease;
+
 
     // Тень слева
     &::before {
@@ -109,6 +131,9 @@
 
     &--opened {
         display: block;
+        transform: translateX(0);
+        // position: fixed;
+        // top: 95px;
     }
 
     @include tablet {
@@ -140,7 +165,6 @@
 
     &--opened {
         right: 250px;
-
     }
 
     @include tablet {
@@ -155,7 +179,6 @@
     width: 36px;
     height: 2px;
     background-color: $white;
-    transition: all 0.5s;
 
     &::before {
         content: "";
@@ -194,11 +217,14 @@
 }
 
 
-.menu__login {
+.menu__login-icon {
     fill: #978374;
     margin-right: 13px;
+    transition: 0.2s all ease;
 
     @include tablet {
         fill: $white;
+
+        
     }
 }
