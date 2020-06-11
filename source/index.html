@@ -22,53 +22,63 @@
 	<div class="page-wrapper">
 
 		<header class="header">
-			
-			<a href="#" class="header__link">
-				<picture>
-					<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
-					<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
-					<img class="header__logo" src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
-				</picture>
-			</a>
-		
-			<div class="header__menu menu">
 
-				<ul class="menu__list">
-					<button class="menu__button menu__button--opened">Показать меню<span class="menu__icon menu__icon--opened"></span></button>
-					<li><a class="menu__link" href="#">Главная</a></li>
-					<li><a class="menu__link" href="#">Наши работы</a></li>
-					<li><a class="menu__link" href="#">Записаться</a></li>
-					<li><a class="menu__link" href="#">Контакты</a></li>
-					<li>
-						<a class="menu__link" href="#">
-							<svg class="menu__login" width="16" height="16">
-								<use xlink:href="#login"></use>
-							</svg>
-							<span>Войти</span>
-						</a>
-					</li>
-				</ul>
+			<div class="header__inner">
+
+				<a href="#" class="header__link">
+					<picture>
+						<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
+						<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
+						<img class="header__logo" src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
+					</picture>
+				</a>
+			
+				<div class="header__menu menu">
+	
+					<div class="menu__current">Главная</div>
+					<button class="menu__button">Показать меню<span class="menu__icon"></span></button>
+					<nav>
+						<ul class="menu__list">
+							<li><a class="menu__link" href="#">Главная</a></li>
+							<li><a class="menu__link" href="#">Наши работы</a></li>
+							<li><a class="menu__link" href="#">Записаться</a></li>
+							<li><a class="menu__link" href="#">Контакты</a></li>
+							<li>
+								<a class="menu__link menu__link--login" href="#">
+									<svg class="menu__login" width="16" height="16">
+										<use xlink:href="#login"></use>
+									</svg>
+									<span>Войти</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+	
+				</div>
 
 			</div>
 
 		</header>
 
 		<section class="stats">
+			<div class="stats__inner">
 
 				<div class="stats__header secondary">
-					<h2 class="stats__heading">Стрижка у нас это выгодно</h2>
+					<div class="stats__wrapper">
+						<h2 class="stats__heading">Стрижка у нас это выгодно</h2>
+						<span class="stats__footnote">* - приведённые данные ложь</span>
+					</div>
 					<p class="stats__text">Мужская стрижка требует точного подхода. Обратимся к статистике:</p>
-					<p class="stats__footnote">* - приведённые данные ложь</p>
 				</div>
 
 				<div class="stats__table">
 					<div class="stats__row">
 						<div class="stats__cell"><span>1 500*</span></div>
-						<div class="stats__cell">рублей <br>вложений</div>
+						<div class="stats__cell">рублей вложений</div>
 					</div>
 					<div class="stats__row">
 						<div class="stats__cell"><span>7 200</span></div>
-						<div class="stats__cell">секунд <br>времени мастера</div>
+						<div class="stats__cell">секунд времени мастера</div>
 					</div>
 					<div class="stats__row">
 						<div class="stats__cell"><span>90 000</span></div>
@@ -80,34 +90,52 @@
 					</div>
 				</div>
 
+			</div>
 		</section>
 
 		<section class="advantages">
 
 			<p class="advantages__footnote">* - приведённые данные ложь</p>
 
-			<article class="advantages__card advantage advantage--active">
-				<svg class="advantage__icon" width="95" height="94">
-					<use xlink:href="#advantages-scissors"></use>
-				</svg>
-				<h2 class="advantage__heading">Быстро</h2>
-				<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
-			</article>
-			<article class="advantages__card advantage display-none">
-				<svg class="advantage__icon" width="95" height="88">
-					<use xlink:href="#advantages-chair"></use>
-				</svg>
-				<h2 class="advantage__heading">Круто</h2>
-				<p class="advantage__text">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.
-				</p>
-			</article>
-			<article class="advantages__card advantage display-none">
-				<svg class="advantage__icon" width="95" height="91">
-					<use xlink:href="#advantages-signboard"></use>
-				</svg>
-				<h2 class="advantage__heading">Дорого</h2>
-				<p class="advantage__text">Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?</p>
-			</article>
+			<ul class="advantages__list">
+				<li class="advantages__item">
+					<article class="advantages__card advantage advantage--active">
+						<svg class="advantage__icon" width="95" height="94">
+							<use xlink:href="#advantages-scissors"></use>
+						</svg>
+						<div class="advantage__wrapper">
+							<h2 class="advantage__heading">Быстро</h2>
+							<p class="advantage__text">Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
+						</div>
+					</article>
+				</li>
+				<li class="advantages__item">
+					<article class="advantages__card advantage">
+						<svg class="advantage__icon" width="95" height="88">
+							<use xlink:href="#advantages-chair"></use>
+						</svg>
+						<div class="advantage__wrapper">
+							<h2 class="advantage__heading">Круто</h2>
+							<p class="advantage__text">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.
+						</div>
+						</p>
+					</article>
+				</li>
+				<li class="advantages__item">
+					<article class="advantages__card advantage">
+						<svg class="advantage__icon" width="95" height="91">
+							<use xlink:href="#advantages-signboard"></use>
+						</svg>
+						<div class="advantage__wrapper">
+							<h2 class="advantage__heading">Дорого</h2>
+							<p class="advantage__text">Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?</p>
+						</div>
+					</article>
+				</li>
+			</ul>
+			
+			
+			
 
 			<div class="advantages__dots">
 				<button class="advantages__dot advantages__dot--active"></button>

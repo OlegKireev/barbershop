@@ -1,31 +1,52 @@
 // Меню
 
-const menu = document.querySelector('.menu');
-const menuItems = menu.querySelectorAll('li');
-const menuButton = menu.querySelector('.menu__button');
-const menuIcon = menu.querySelector('.menu__icon');
+// const tabletWidth = 768;
+// const menu = document.querySelector('.menu');
+// const menuItems = menu.querySelectorAll('li');
+// const menuButton = menu.querySelector('.menu__button');
+// const menuIcon = menu.querySelector('.menu__icon');
+
+// // ПРИ ИЗМЕНЕНИИ РАЗМЕРОВ ОКНА ТАКАЯ РЕАЛИЗАЦИЯ СКРЫТИЯ/ПОКАЗА МЕНЮ НЕ РАБОТАЕТ
+// menuButton.addEventListener('click', () => {
+//     menuItems.forEach((item,i)=> {
+//         menu.classList.toggle('menu--closed');
+//         menuButton.classList.toggle('menu__button--opened');
+//         menuIcon.classList.toggle('menu__icon--opened');
+
+//             if (i > 0) {
+//                 item.classList.toggle('display-none');
+//             } else {
+//                 item.querySelector('a').classList.toggle('menu__link--active');
+//             }
+
+//     })
+// });
+    
+
+// // Закрываем меню при загрузке
+// document.addEventListener('DOMContentLoaded', () => {
+//     setTimeout(() => {
+//         menuButton.click();
+//     }, 0);
+// });
+
+const menuButton = document.querySelector('.menu__button');
+const menuButtonIcon = menuButton.querySelector('.menu__icon');
+const menuList = document.querySelector('.menu__list');
+const menuCurrent = document.querySelector('.menu__current');
+let currentLinkTextBack = menuCurrent.textContent;
 
 menuButton.addEventListener('click', () => {
-    menuItems.forEach((item,i)=> {
-        menu.classList.toggle('menu--closed');
-        menuButton.classList.toggle('menu__button--opened');
-        menuIcon.classList.toggle('menu__icon--opened');
+    menuButton.classList.toggle('menu__button--opened');
+    menuList.classList.toggle('menu__list--opened');
+    menuButtonIcon.classList.toggle('menu__icon--opened');
 
-        if (i > 0) {
-            item.classList.toggle('display-none');
-        } else {
-            item.querySelector('a').classList.toggle('menu__link--active');
-        }
-    })
+    if (menuCurrent.textContent === ``) {
+        menuCurrent.textContent = currentLinkTextBack;
+    } else {
+        menuCurrent.textContent = ``;
+    }
 })
-
-// Закрываем меню при загрузке
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        menuButton.click();
-    }, 0);
-});
-
 
 // Слайдер с преимуществами
 // СДЕЛАТЬ ПЛАВНУЮ АНИМАЦИЮ СМЕНЫ СЛАЙДОВ
@@ -39,11 +60,11 @@ sliderButtons.forEach((button, i)=> {
         // Скрываем все карточки
         slides.forEach((slide, i) => {
             slide.classList.remove('advantage--active');
-            slide.classList.add('display-none');
+            // slide.classList.add('display-none');
         })
 
         // Показываем нужную карточку
-        slides[i].classList.remove('display-none');
+        // slides[i].classList.remove('display-none');
         slides[i].classList.add('advantage--active');
         
         sliderButtons.forEach((btn, i) => {

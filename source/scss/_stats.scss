@@ -2,33 +2,83 @@
     background-color: #353535;    
 }
 
+.stats__inner {
+    
+    @include tablet {
+        padding-left: $tablet-padding;
+        padding-right: $tablet-padding;
+        position: relative;
+        // для того чтобы контент сравнялся на величину смещения блока вверх
+        margin-bottom: -184px;    
+        // смещение блока вверх
+        top: -184px;
+    }
+}
+
+.stats__wrapper {
+
+    @include tablet {
+        width: 50%;
+    }
+}
+
 .stats__header {
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: $mobile-padding;
     padding-right: $mobile-padding;
     text-align: center;
+
+    @include tablet {
+        display: flex;
+        text-align: left;
+
+    }
+
 }
 
 .stats__heading {
     margin-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+
     text-transform: uppercase;
+    
+    @include tablet {
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 40px;
+        line-height: 1;
+        text-transform: none;
+    }
 }
 
 .stats__text {
     font-size: 20px;
+
+    @include tablet {
+        padding-left: 40px;
+        width: 42%;
+    }
 }
 
 .stats__footnote {
-    @include visually-hidden;
+    display: none;
+
+    @include tablet {
+        display: block;
+        opacity: 0.3;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }
 
 .stats__table {
     background-color: #353535;
     color: $white;
-
+    
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .stats__row {
@@ -55,6 +105,12 @@
     &:nth-child(4) {
         background-color: #404040;  
     }
+
+    @include tablet {
+        flex-direction: column;
+        width: 50%;
+        align-items: start;
+    }
 }
 
 .stats__cell {
@@ -64,12 +120,27 @@
     &:first-child {
         font-size: 40px;
         font-weight: bold;
+
+        @include tablet {
+            font-size: 72px;
+        }
     }
 
     // Описание
     &:last-child {
         width: 40%;
         text-align: right;
+
+        @include tablet {
+            width: 100%;
+            font-size: 20px;
+            text-align: left;
+        }
+    }
+    
+    @include tablet {
+        width: 100%;
+        text-align: left;
     }
 }
 

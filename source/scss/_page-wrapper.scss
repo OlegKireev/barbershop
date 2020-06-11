@@ -6,8 +6,8 @@
 
     @include tablet {
         max-width: $desktop;
-        padding-left: $tablet-padding;
-        padding-right: $tablet-padding;
+        // padding-left: $tablet-padding;
+        // padding-right: $tablet-padding;
 
         @include desktop {
             padding-left: $desktop-padding;
