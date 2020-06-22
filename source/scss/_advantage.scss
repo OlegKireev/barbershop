@@ -18,35 +18,63 @@
         align-items: center;
         text-align: left;
     }
+
+    @include desktop {
+        flex-direction: column;
+        padding-top: 63px;
+        // text-align: center;
+    }
 }
 
 .advantage__wrapper {
     @include tablet {
         width: 75%;
     }
+
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
 }
 
 .advantage__icon {
-    margin-bottom: 30px;
+    margin-bottom: 26px;
     min-height: 94px;
     fill: $main-color;
     
     @include tablet {
-        width: 25%;
-        margin-bottom: 0;
+        width: 20%;
+        margin-right: 19px;
+        // margin-bottom: 75px;
+    }
+
+    @include desktop {
+        margin-bottom: 28px;
+        margin-right: -10px;
+        width: 95px;
     }
 }
 
 .advantage__heading {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     text-transform: uppercase;
 
-    @include tablet {
-        
+    @include desktop {
+        width: 100%;
     }
 }
 
 .advantage__text {
     margin-bottom: 25px;
+    min-height: 104px;
     font-size: 20px;
+
+    @include tablet {
+        min-height: auto;
+    }
+
+    @include desktop {
+        min-width: 115%;
+    }
 }

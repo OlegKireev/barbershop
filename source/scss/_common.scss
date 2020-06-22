@@ -1,20 +1,36 @@
-// @keyframes bounce {
-//     0% {
-//         transform: translateY(-2000px);
-//     }
+@keyframes easeOutElastic {
+	0% {
+		transform: translate(-50%, 300%);
+	}
 
-//     // 70% {
-//     //     transform: translateY(30px);
-//     // }
+	16% {
+		transform: translate(-50%, -82.27%);
+	}
 
-//     90% {
-//         transform: translateY(-10px);
-//     }
+	28% {
+		transform: translate(-50%, -36.88%);
+	}
 
-//     100% {
-//         transform: translateY(0);
-//     }
-// }
+	44% {
+		transform: translate(-50%, -54.63%);
+	}
+
+	59% {
+		transform: translate(-50%, -48.36%);
+	}
+
+	73% {
+		transform: translate(-50%, -50.58%);
+	}
+
+	88% {
+		transform: translate(-50%, -49.8%);
+	}
+
+	100% {
+		transform: translate(-50%, -50%);
+	}
+}
 
 @font-face {
     font-family: 'PT Sans Narrow';
@@ -33,7 +49,11 @@
 }
 
 .display-none {
-    display: none;
+    display: none !important;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }
 
 body {
@@ -43,39 +63,46 @@ body {
     font-weight: $font-weight;
     line-height: $line-height;
     font-size: $font-size;
+    letter-spacing: 0.1px;
 
     h1 {
         font-size: $h1-font-size;
+        line-height: $heading-line-height;
         margin-top: 0;
         margin-bottom: 0;
     }
 
     h2 {
         font-size: $h2-font-size;
+        line-height: $heading-line-height;
         margin-top: 0;
         margin-bottom: 0;
     }
 
     h3 {
         font-size: $h3-font-size;
+        line-height: $heading-line-height;
         margin-top: 0;
         margin-bottom: 0;
     }
 
     h4 {
         font-size: $h4-font-size;
+        line-height: $heading-line-height;
         margin-top: 0;
         margin-bottom: 0;
     }
 
     h5 {
         font-size: $h5-font-size;
+        line-height: $heading-line-height;
         margin-top: 0;
         margin-bottom: 0;
     }
 
     h6 {
         font-size: $h6-font-size;
+        line-height: $heading-line-height;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -162,9 +189,9 @@ body {
             }
         }
     }
-    @include tablet {
-        background-color: #353535;
-    }
+    // @include tablet {
+    //     background-color: #353535;
+    // }
 }
 
 // .page-wrapper {

@@ -1,7 +1,7 @@
 .reviews {
     position: relative;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 24px;
+    padding-bottom: 16px;
     text-align: center;
     padding-left: $mobile-padding;
     padding-right: $mobile-padding;
@@ -23,23 +23,35 @@
     }
 
     @include tablet {
-        padding-left: $tablet-padding;
-        padding-right: $tablet-padding;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding-left: $tablet-padding;
+        padding-right: $tablet-padding;
+        padding-top: 40px;
+        padding-bottom: 18px;
+    }
+
+    @include desktop {
+        padding-top: 43px;
+        padding-left: $desktop-padding;
+        padding-right: $desktop-padding;
     }
 }
 
 .reviews__heading {
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 29px;
 
     @include tablet {
         font-size: 40px;
         width: auto;
-        margin-bottom: 0;
+        margin-bottom: 13px;
         text-align: left;
+    }
+
+    @include desktop {
+        margin-left: 70px;
     }
 }
 
@@ -55,7 +67,7 @@
         &--next {
             position: relative;
             width: 50px;
-            height: 160px;
+            min-height: 100%;
             font-size: 0;
             padding: 0;
             flex-grow: 0;
@@ -77,9 +89,12 @@
         &--next {
             &::before {
                 transform: translate(-50%, -50%) rotate(180deg);
-                
             }
         }
+    }
+
+    @include desktop {
+        max-width: 16.66%;
     }
 }
 
@@ -88,26 +103,49 @@
     @include tablet {
         display: flex;
         justify-content: space-between;
+        width: 100%;
         margin-top: 30px;
     }
 }
 
-.reviews__card {
+.reviews__list {
     margin-bottom: 20px;
+    
+    @include tablet {
+        margin: 0;
+        width: 100%;
+    }
+
+    @include desktop {
+        width: 88%;
+    }
+
+    @include desktop {
+        width: 85%;
+    }
 }
+
 
 .reviews__dots {
     margin-bottom: 30px;
 
     @include tablet {
         position: relative;
-        top: -33px;
+        top: -13px;
         width: 125px;
         margin-left: auto;
         margin-right: auto;
         background: #f8f5f2;
     }
+
+    @include desktop {
+        top: 0;
+        margin-top: 20px;
+        background: transparent;
+
+    }
 }
+
 .reviews__dot {
     border: 1px solid #353535;
     width: 14px;
@@ -120,7 +158,7 @@
 
 
     &:not(:last-child) {
-        margin-right: 23px;
+        margin-right: 15px;
     }
 
     &--active {

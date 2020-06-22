@@ -3,19 +3,31 @@
 
 .social__text {
     display: none;
+    margin-bottom: 12px;
+
+    @include desktop {
+        display: block;
+    }
 }
 
 .social__wrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
+    @include desktop {
+        justify-content: center;
+    }
 }
 
 .social__link {
     display: block;
-    width: 100%;
+    width: 33.33%;
     font-size: 0;
-    padding: 37px;
+    padding: 32px;
     border: 1px solid #3f3f3f;
+    transition:  0.2s ease all;
+    
 
         &:hover,
         &:focus {
@@ -31,6 +43,20 @@
         &:active .social__icon {
             fill: rgba(255, 255, 255, 0.3);
         }
+
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+
+        &:not(:last-child) {
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+    }
 }
 
 .social__icon {

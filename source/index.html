@@ -25,14 +25,16 @@
 
 			<div class="header__inner">
 
-				<a href="#" class="header__link">
-					<picture>
-						<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
-						<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
-						<img class="header__logo" src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
-					</picture>
-				</a>
-			
+				<div class="header__logo-wrapper">
+					<a href="#" class="header__link">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
+							<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
+							<img class="header__logo" src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
+						</picture>
+					</a>
+				</div>
+
 				<div class="header__menu menu">
 	
 					<div class="menu__current">Главная</div>
@@ -71,10 +73,11 @@
 
 				<div class="stats__header secondary">
 					<div class="stats__wrapper">
-						<h2 class="stats__heading">Стрижка у нас это выгодно</h2>
+						<h2 class="stats__heading">Стрижка у нас это выгодно!</h2>
 						<span class="stats__footnote">* - приведённые данные ложь</span>
 					</div>
 					<p class="stats__text">Мужская стрижка требует точного подхода. Обратимся к статистике:</p>
+					<span class="stats__footnote stats__footnote--desktop">* - приведённые данные ложь</span>
 				</div>
 
 				<div class="stats__table">
@@ -157,25 +160,9 @@
 				<h2 class="news__heading">Новости и акции</h2>
 
 				<ul class="news__list">
-					<li class="news__item">
-						<article class="news__card">
-							<p class="news__date"><span>29</span>сент</p>
-							<p class="news__text">
-								Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.
-							</p>
-						</article>
-					</li>
-					<li class="news__item">
-						<article class="news__card">
-							<p class="news__date"><span>19</span>сент</p>
-							<p class="news__text">
-								В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды. Спешите записаться!
-							</p>
-						</article>
-					</li>
 				</ul>
 
-				<button class="news__button button">Показать все</button>
+				<button class="news__button button">Показать еще</button>
 
 			</div>
 		</section>
@@ -190,39 +177,45 @@
 				<ul class="reviews__list">
 					<li class="reviews__item">
 						<article class="reviews__card review review--active">
-							<picture>
-								<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
-								<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
-								<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
-							</picture>
+							<div class="review__photo-wrapper">
+								<picture>
+									<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
+									<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
+									<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
+								</picture>
+							</div>
 							<div class="review__wrapper">
-								<h3 class="review__name">Трэвис Баркер</h3>
+								<h3 class="review__name">Сергей Степанов</h3>
 								<p class="review__text">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
 							</div>
 						</article>
 					</li>
 					<li class="reviews__item">
 						<article class="reviews__card review">
-							<picture>
-								<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
-								<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
-								<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
-							</picture>
+							<div class="review__photo-wrapper">
+								<picture>
+									<source media="(min-width: 1200px)" srcset="img/review2-desktop.jpg">
+									<source media="(min-width: 768px)" srcset="img/review2-tablet.jpg">
+									<img class="review__photo" src="img/review2-mobile.jpg" alt="Фото клиента оставившего отзыв">
+								</picture>
+							</div>
 							<div class="review__wrapper">
-								<h3 class="review__name">Мэджик Эрроу</h3>
+								<h3 class="review__name">Юрий Зинкович</h3>
 								<p class="review__text">Безупречная работа мастеров. Если не тратить четверть своей зарплаты на волосы, так на что еще?</p>
 							</div>
 						</article>
 					</li>
 					<li class="reviews__item">
 						<article class="reviews__card review">
-							<picture>
-								<source media="(min-width: 1200px)" srcset="img/review1-desktop.jpg">
-								<source media="(min-width: 768px)" srcset="img/review1-tablet.jpg">
-								<img class="review__photo" src="img/review1-mobile.jpg" alt="Фото клиента оставившего отзыв">
-							</picture>
+							<div class="review__photo-wrapper">
+								<picture>
+									<source media="(min-width: 1200px)" srcset="img/review3-desktop.jpg">
+									<source media="(min-width: 768px)" srcset="img/review3-tablet.jpg">
+									<img class="review__photo" src="img/review3-mobile.jpg" alt="Фото клиента оставившего отзыв">
+								</picture>
+							</div>
 							<div class="review__wrapper">
-								<h3 class="review__name">Валентин Галп</h3>
+								<h3 class="review__name">Александер Третьяков</h3>
 								<p class="review__text">Можно прямо во время стрижки зарубиться с мастером в Mortal Kombat на Playstation, я тащу за бараку!</p>
 							</div>
 						</article>
@@ -251,23 +244,23 @@
 				</div>
 	
 				<div class="footer__socials social">
-					<span class="social__text">Давайте дружить</span>
+					<span class="social__text">Давайте дружить!</span>
 					<div class="social__wrapper">
 						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank">
 							Открыть нашу страницу "В контакте"
-							<svg class="social__icon social__icon--vk" width="25" height="25">
+							<svg class="social__icon social__icon--vk" width="35" height="35">
 								<use xlink:href="#socials-vk"></use>
 							</svg>
 						</a>
 						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank">
 							Открыть нашу страницу на "Фейсбук"
-							<svg class="social__icon social__icon--facebook" width="25" height="25">
+							<svg class="social__icon social__icon--facebook" width="35" height="35">
 								<use xlink:href="#socials-facebook"></use>
 							</svg>
 						</a>
 						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank">
 							Открыть наш профиль "Инстаграм"
-							<svg class="social__icon social__icon--instagram" width="25" height="25">
+							<svg class="social__icon social__icon--instagram" width="35" height="35">
 								<use xlink:href="#socials-instagram"></use>
 							</svg>
 						</a>
@@ -284,9 +277,52 @@
 
 	</div>
 
-	<!-- <svg class="page-footer__image" width="27" height="34">
-				<use xlink:href="#icon-htmlacademy"></use>
-		</svg> -->
+	<section class="login popup secondary display-none">
+		<h2 class="login__heading">Личный кабинет</h2>
+		<p class="login__text">Введите свой логин и пароль, чтобы войти</p>
+		<form action="https://echo.htmlacademy.ru" method="POST">
+			<div class="login__wrapper">
+
+				<div class="login__cell">
+					<input class="login__input login__input--name" type="text" name="login__name" id="login__name" required>
+					<label class="login__label login__label--name" for="login__name">Логин</label>	
+				</div>
+				<div class="login__cell">
+					<input class="login__input login__input--password" type="password" name="login__password" id="login__password" required>
+					<label class="login__label login__label--password" for="login__password">Пароль</label>
+				</div>
+				
+			</div>
+
+			<div class="popup__row">
+				<div class="popup__cell">
+					<input class="login__input--save-password" type="checkbox" name="save-password" id="login__save-password-input">
+					<label class="login__label--save-password" for="login__save-password-input">Запомните меня</label>
+				</div>
+				<a class ="login__link" href="#">Я забыл пароль!</a>
+			</div>
+
+			<div class="login__buttons">
+				<button class="login__button button" type="submit">Войти<span> в личный кабинет</span></button>
+				<button class="popup__buttton popup__button--close button" type="button">Закрыть<span> модальное окно</span></button>
+			</div>
+		</form>
+		
+	</section>
+
+	<template id="news__template">
+		<li class="news__item">
+			<article class="news__card">
+				<div class="news__date">
+					<span class="news__day">9</span>
+					<span class="news__month">сент</span>
+				</div>
+				<p class="news__text">
+					Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!
+				</p>
+			</article>
+		</li>
+	</template>
 
 	<script src="js/script.js"></script>
 </body>

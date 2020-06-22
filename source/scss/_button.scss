@@ -6,7 +6,7 @@
     background: transparent;
     border: 1px solid #e5ddd5;
     cursor: pointer;
-    outline: none;
+    transition: 0.2s all ease;
     
     &:hover,
     &:focus {
@@ -16,5 +16,9 @@
     &:active {
         background-color: #d5c9bd;
         color: rgba(0,0,0,0.3);
+    }
+
+    @include tablet {
+        padding: 9px 15px 12px;
     }
 }

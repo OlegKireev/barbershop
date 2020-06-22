@@ -1,10 +1,10 @@
 .header {
     padding-top: 30px;
     text-align: center;
-
+    
     @include tablet {
         padding-top: 0;
-        background-color: $black;
+        background-color: $dark-gray;
         background-image: url('../img/back-tablet.jpg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
@@ -13,17 +13,17 @@
 }
 
 .header__inner {
-    @include tablet {
-        display: flex;
-        flex-direction: column;
-        // padding-left: $tablet-padding;
-        // padding-right: $tablet-padding;
-    }
-}
+    display: flex;
+    flex-direction: column;
+    min-height: 85px;
 
-.header__link {
-    // display: block;
-    order: 2;
+    @include tablet {
+        min-height: 469px;
+    }
+
+    @include desktop {
+        min-height: 720px;
+    }
 }
 
 .header__menu {
@@ -31,17 +31,33 @@
         order: 1;
     }
 }
+
+.header__logo-wrapper {
+    margin-bottom: 20px;
+
+    @include tablet {
+        order: 2;
+        margin-top: 40px;
+        margin-bottom: 252px;
+    }
+
+    @include desktop {
+        margin-top: 60px;
+    }
+}
+
 .header__logo {
-    margin-bottom: 30px;
+    
+    pointer-events: all;
 
     @include tablet {
         width: 370px;
         height: 101px;
-        margin-top: 40px;
-        margin-bottom: 257px;
-    }
 
+    }
+    
     @include desktop {
+        margin-top: 0px;
         height: 153px;
     }
 }

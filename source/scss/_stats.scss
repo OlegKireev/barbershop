@@ -13,6 +13,13 @@
         // смещение блока вверх
         top: -184px;
     }
+
+    @include desktop {
+        display: flex;
+        padding-left: $desktop-padding;
+        padding-right: $desktop-padding;
+        top: -159px;
+    }
 }
 
 .stats__wrapper {
@@ -20,56 +27,120 @@
     @include tablet {
         width: 50%;
     }
+
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 18px;
+    }
 }
 
 .stats__header {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: $mobile-padding;
-    padding-right: $mobile-padding;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: center;
 
     @include tablet {
         display: flex;
+        padding-top: 30px;
         text-align: left;
 
+    }
+
+    @include desktop {
+        position: relative;
+        max-width: 33%;
+        flex-direction: column;
+        // justify-content: space-between;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -22px;
+            right: 0;
+            background-image: linear-gradient(to top right, transparent 0%, transparent 50%, $secondary-color 50%);
+            width: 23px;
+            height: 23px;
+            // transform: rotate(45deg);
+        }
     }
 
 }
 
 .stats__heading {
-    margin-bottom: 20px;
-
+    margin-bottom: 16px;
     text-transform: uppercase;
+    padding-left: 30px;
+    padding-right: 30px;
     
     @include tablet {
-        padding-left: 50px;
-        padding-right: 50px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 30px;
         font-size: 40px;
-        line-height: 1;
         text-transform: none;
+    }
+
+    @include desktop {
+        max-width: 100%;
+        padding: 0;
     }
 }
 
 .stats__text {
     font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 
     @include tablet {
-        padding-left: 40px;
+        padding-top: 6px;
+        padding-left: 33px;
+        padding-right: 15px;
         width: 42%;
+    }
+
+    @include desktop {
+        width: 95%;
+        margin-bottom: 31px;
+        padding-left: 0;
     }
 }
 
+// Сноска со здездочкой *
 .stats__footnote {
     display: none;
 
     @include tablet {
         display: block;
         opacity: 0.3;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+
+        // Прячем дескоптную подпись на планшете и меньше
+        &--desktop {
+            display: none;
+        }
+    }
+
+    // Прячем планшетную версию на десктопе
+    @include desktop {
+        display: none;
+
+        // Показываем дескоптную версию на десктопе
+        &--desktop {
+            display: block;
+            font-size: 20px;
+            padding: 0;
+        }
     }
 }
+
 
 .stats__table {
     background-color: #353535;
@@ -85,8 +156,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 23px;
-    padding-bottom: 24px;
+    padding-top: 12px;
+    padding-bottom: 15px;
     padding-left: $mobile-padding;
     padding-right: $mobile-padding;
 
@@ -109,7 +180,17 @@
     @include tablet {
         flex-direction: column;
         width: 50%;
+        justify-content: center;
         align-items: start;
+        // align-items: center;
+        padding-top: 14px;
+        padding-left: 33px;
+        padding-bottom: 32px;
+    }
+
+    @include desktop {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -130,6 +211,7 @@
     &:last-child {
         width: 40%;
         text-align: right;
+        line-height: 1;
 
         @include tablet {
             width: 100%;

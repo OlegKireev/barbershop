@@ -1,8 +1,39 @@
 .news {
-    padding-top: 30px;
+    position: relative;
+    padding-top: 33px;
     padding-bottom: 30px;
     text-align: center;
     border-bottom: 1px solid #e5ddd5;
+
+    // &::after {
+    //     content: "";
+    //         position: absolute;
+    //         top: -211px;
+    //         left: 0;
+    //         width: 100%;
+    //         height: 100%;
+    //         background: url('../img/icon/white-angle-tablet.svg') 50% 0% no-repeat;
+    //         background-size: cover;
+    //         pointer-events: none;
+
+    //         @include tablet {
+    //             bottom: -146px;
+    //             transform: scaleY(0.5);
+    //         }
+
+    //         @include desktop {
+    //             // bottom: -123px;
+    //         }
+    // }
+
+    @include tablet {
+        padding-top: 39px;
+        padding-bottom: 18px;
+    }
+
+    @include desktop {
+        padding-top: 50px;
+    }
 }
 
 .news__inner {
@@ -17,16 +48,25 @@
         padding-left: $tablet-padding;
         padding-right: $tablet-padding;
     }
+
+    @include desktop {
+        padding-left: $desktop-padding;
+        padding-right: $desktop-padding;
+    }
 }
 
 .news__heading {
-    margin-bottom: 20px;
+    margin-bottom: 9px;
     text-transform: uppercase;
 
     @include tablet {
         order: 0;
         margin-bottom: 0;
         font-size: 40px;
+    }
+
+    @include desktop {
+        margin-left: 70px;
     }
 }
 
@@ -36,16 +76,32 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-top: 29px;
     }
 }
 
 .news__item {
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    // margin-top: 9px;
+    // margin-bottom: 20px;
+
+    &:not(:first-child) + &:not(:nth-child(2)) {
+        display: none;
+    } 
 
     @include tablet {
         width: 50%;
+    }
+
+    @include desktop {
+        width: 33%;
+
+        &:first-child + &:nth-child(2) + &:nth-child(3) {
+            display: block;
+        }
+        &:not(:first-child) + &:not(:nth-child(2)) + &:not(:nth-child(3)) {
+            display: none;
+        } 
     }
 }
 
@@ -58,7 +114,7 @@
     @include tablet {
     justify-content: space-between;
 
-        max-width: 80%;
+        max-width: 89%;
     }
 }
 
@@ -76,19 +132,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50px;
+    min-width: 50px;
     height: 50px;
     margin-bottom: 10px;
+    margin-right: 25px;
     background: $black;
     color: $white;
     font-size: 16px;
     line-height: 1;
-    
-    & span {
-        font-size: 30px;
-        line-height: 0.8;
-        font-weight: bold;
-    }
 
     &::after {
         content: "";
@@ -105,9 +156,18 @@
     }
 }
 
+.news__day {
+    font-size: 30px;
+    line-height: 0.8;
+    font-weight: bold;
+}
+
+
 .news__text {
-    width: 75%;
+    // width: 75%;
     text-align: left;
+    line-height: 26px;
+
 }
 
 .news__button {
@@ -120,8 +180,17 @@
     background: transparent;
     border: 1px solid #e5ddd5;
     cursor: pointer;
+
+    &--opened {
+        background-color: $main-color;
+        color: $white;
+    }
     
     @include tablet {
-        width: 25%;
+        max-width: 25%;
+    }
+
+    @include desktop {
+        max-width: 16.66%;
     }
 }

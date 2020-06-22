@@ -99,7 +99,7 @@ gulp.task('clean', function () {
 // Перенос файлов в папку сборки
 gulp.task('copy', function() {
 	return gulp.src([
-		'source/fonts/**/*.{woff,woff2}', // Все файлы шрифтов
+	'source/fonts/**/*.{woff,woff2}', // Все файлы шрифтов
     'source/*.ico', // Все файлы .ico
     'source/server/**/*.*',
     'source/server.php'
