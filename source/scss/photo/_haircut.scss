@@ -1,0 +1,159 @@
+.haircut {
+    outline: 1px solid #e5ddd5;
+    outline-offset: -1px;
+    // max-width: 294px;
+    // min-width: 100%;
+
+    &--best {
+        position: relative;
+
+        @include desktop {
+            & .haircut__photo {
+                min-width: 480px;
+                min-height: 480px;
+            }
+            & .haircut__wrapper--text {
+                padding-top: 96px;
+            }
+        }
+    }
+
+    @include tablet {
+        display: flex;
+        
+        // max-width: 100%;
+    }
+
+    @include desktop {
+        &:not(.haircut--best) {
+            max-width: 294px;
+            flex-direction: column;
+        }
+    }
+
+    // Прячем лейбл "Работа месяца" 
+    &:not(.haircut--best) {
+        & .haircut__best {
+            display: none;
+        }
+    }
+}
+
+.haircut__heading {
+    margin-bottom: 15px;
+
+    @include tablet {
+        margin-bottom: 28px;
+    }
+}
+
+.haircut__wrapper {
+    // position: relative;
+
+    &--description {
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 25px;
+
+        @include tablet {
+            // position: static;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 46px;
+            padding-left: 42px;
+            padding-right: 50px;
+            padding-bottom: 30px;
+        }
+
+        @include desktop {
+            padding: 35px;
+            min-height: 248px;
+        }
+    }
+}
+// Фото работы
+.haircut__photo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 17px;
+    max-height: 480px;
+
+    @include tablet {
+        margin-bottom: 0;
+        min-width: 270px;
+    }
+
+    @include desktop {
+        min-width: 294px;
+        height: 294px;
+        margin: 0;
+    }
+}
+
+// Рамка "Работа месяца"
+.haircut__best {
+    position: absolute;
+    left: 0;
+    top: 398px;
+    width: 176px;
+    padding: 12px 20px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $main-color;
+    // Вырезаем нужную форму рамки
+    clip-path: polygon(100% 100%, 0% 100%, 0 0, 100% 0, 95% 50%);
+    // transform: translateX(140px);
+    
+    @include tablet {
+        transform: translateX(0);
+        bottom: auto;
+        top: 40px;
+        // transform: translateX(-84px);
+    }
+
+    @include desktop {
+        clip-path: polygon(100% 100%, 0% 100%, 5% 50%, 0 0, 100% 0);
+        left: auto;
+        right: 0;
+        top: 20px;
+    }
+}
+
+.haircut__comment {
+    line-height: 27px;
+    margin-bottom: 20px;
+}
+
+.haircut__options {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.haircut__option {
+    display: flex;
+    margin-right: 28px;
+
+    &:not(:last-child) {
+        margin-bottom: 21px;
+
+        @include desktop {
+            margin-bottom: 0;
+        }
+    }
+
+    @include desktop {
+        margin-right: 20px;
+    }
+}
+
+.haircut__option-icon {
+    margin-right: 16px;
+    fill: $main-color;
+}

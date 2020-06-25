@@ -33,30 +33,6 @@
 
 })();
 
-// Меню
-(() => {
-    
-    const menuButton = document.querySelector('.menu__button');
-    const menuButtonIcon = menuButton.querySelector('.menu__icon');
-    const menuList = document.querySelector('.menu__list');
-    const menuCurrent = document.querySelector('.menu__current');
-    let currentLinkTextBack = menuCurrent.textContent;
-    
-    menuButton.addEventListener('click', () => {
-        menuButton.classList.toggle('menu__button--opened');
-        menuList.classList.toggle('menu__list--opened');
-        menuButtonIcon.classList.toggle('menu__icon--opened');
-    
-        if (menuCurrent.textContent === ``) {
-            menuCurrent.textContent = currentLinkTextBack;
-        } else {
-            menuCurrent.textContent = ``;
-        }
-    })
-
-})();
-
-
 // Слайдер с преимуществами
 // СДЕЛАТЬ ПЛАВНУЮ АНИМАЦИЮ СМЕНЫ СЛАЙДОВ
 (()=>{
@@ -254,7 +230,6 @@
         } else {
             showNewsAmount = 2;
         }
-        console.log(showNewsAmount);
     });
 
     
@@ -290,41 +265,4 @@
     });
 
 
-})();
-
-
-
-// Логин
-(() => {
-    const loginButton = document.querySelector(`.menu__link--login`);
-    const loginModal = document.querySelector(`.login`);
-    const modalCloseButton = loginModal.querySelector(`.popup__button--close`);
-    const pageBody = document.querySelector(`body`);
-    const ESC__BUTTON = 27;
-    
-    const showLoginModal = function () {
-        loginModal.classList.remove(`display-none`);
-        // pageBody.classList.add(`overflow-hidden`);
-    };
-
-    const hideLoginModal = function () {
-        loginModal.classList.add(`display-none`);
-        // pageBody.classList.remove(`overflow-hidden`);
-        document.removeEventListener(`keydown`, onEscCloseModal);
-    };
-
-    const onEscCloseModal = function (evt) {
-        if (evt.keyCode === ESC__BUTTON) {
-            hideLoginModal();
-        }
-    }
-
-    loginButton.addEventListener(`click`, () => {
-        showLoginModal();
-        document.addEventListener(`keydown`, onEscCloseModal);
-    })
-
-    modalCloseButton.addEventListener(`click`, () => {
-        hideLoginModal();
-    })
 })();

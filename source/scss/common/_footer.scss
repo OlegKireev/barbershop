@@ -2,6 +2,8 @@
     background-color: #292929;
     text-align: center;
     padding-top: 34px;
+    // Чтобы не вылезал ненужный бекграунд page-wrapper'a
+    padding-bottom: 1px;
 
     @include tablet {
         padding-top: 51px;

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preload" href="fonts/PTSansNarrow-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/PTSansNarrow-Bold.woff2" as="font">
+
+	<link rel="stylesheet" href="css/style.css">
+	<title>Barbershop</title>
+	<meta name="description" content="Стрижка у нас это выгодно!">
+</head>
+
+<body>
+
+	<!-- Подключаем svg-спрайт -->
+	<div class="svg-sprite" style="display:none;">
+        <include src="build/img/icon.svg"></include>
+	</div>
+	
+	<div class="page-wrapper page-wrapper--photo">
+
+		<header class="header header--photo">
+
+			<div class="header__inner">
+
+				<div class="header__logo-wrapper">
+					<a href="index.html" class="header__link">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
+							<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
+							<img class="header__logo" src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
+						</picture>
+					</a>
+				</div>
+
+				<div class="header__menu menu">
+	
+					<div class="menu__current">Работы</div>
+					<button class="menu__button">Показать меню<span class="menu__icon"></span></button>
+					<nav>
+						<ul class="menu__list">
+							<li><a class="menu__link" href="index.html">Главная</a></li>
+							<li><a class="menu__link menu__link--active">Наши работы</a></li>
+							<li><a class="menu__link" href="#">Записаться</a></li>
+							<li><a class="menu__link" href="#">Контакты</a></li>
+							<li>
+
+								<ul class="menu__login">
+									<li>
+										<a class="menu__link menu__link--login" href="#">
+											<svg class="menu__login-icon" width="16" height="16">
+												<use xlink:href="#login"></use>
+											</svg>
+											<span>Войти</span>
+										</a>
+									</li>
+								</ul>
+
+							</li>
+						</ul>
+						
+					</nav>
+	
+				</div>
+
+			</div>
+
+		</header>
+
+		<main class="page-main page-main--photo secondary">
+
+			<section class="works">
+
+				<div class="works__wrap">
+					<h1 class="works__heading">Hаши работы</h1>
+					<a class="works__link button" href="index.html">На главную</a>
+				</div>
+
+				<ul class="works__list">
+
+					<li class="works__item works__best">
+						<article class="works__card works__card--best haircut haircut--best">
+							<div class="haircut__wrapper haircut__wrapper--photo">
+								<picture>
+									<source media="(min-width: 1200px)" srcset="img/works-1-desktop.jpg">
+									<source media="(min-width: 768px)" srcset="img/works-1-tablet.jpg">
+									<img class="haircut__photo" src="img/works-1-mobile.jpg" alt="Фото довольного клиента">
+								</picture>
+								<div class="haircut__best">Работа месяца</div>
+							</div>
+							<div class="haircut__wrapper haircut__wrapper--description">
+								<div class="haircut__wrapper haircut__wrapper--text">
+									<h3 class="haircut__heading">Лжепётр Мчиславский</h3>
+									<p class="haircut__comment">Где я только не стригся, но так как делаете это вы - не умеет никто другой! Еще раз спасибо и до скорого!</p>
+								</div>
+								<ul class="haircut__options">
+									<li class="haircut__option haircut__option--shear">
+										<svg class="haircut__option-icon" width="21" height="20">
+											<use xlink:href="#options-scissors"></use>
+										</svg>
+										Стрижка
+									</li>
+									<li class="haircut__option haircut__option--shave">
+										<svg class="haircut__option-icon" width="23" height="21">
+											<use xlink:href="#options-beard"></use>
+										</svg>
+										Бритье
+									</li>
+									<li class="haircut__option haircut__option--mustache ">
+										<svg class="haircut__option-icon" width="45" height="12">
+											<use xlink:href="#options-mustache"></use>
+										</svg>
+										Усы
+									</li>
+								</ul>
+							</div>
+						</article>
+					</li>
+	
+					<li class="works__item">
+						<article class="works__card haircut">
+							<div class="haircut__wrapper haircut__wrapper--photo">
+								<picture>
+									<source media="(min-width: 1200px)" srcset="img/works-2-desktop.jpg">
+									<source media="(min-width: 768px)" srcset="img/works-2-tablet.jpg">
+									<img class="haircut__photo" src="img/works-2-mobile.jpg" alt="Фото довольного клиента">
+								</picture>
+								<div class="haircut__best">Работа месяца</div>
+							</div>
+							<div class="haircut__wrapper haircut__wrapper--description">
+								<div class="haircut__wrapper haircut__wrapper--text">
+									<h3 class="haircut__heading">Саша Мальцев</h3>
+									<p class="haircut__comment">Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?</p>
+								</div>
+								<ul class="haircut__options">
+									<li class="haircut__option haircut__option--shear">
+										<svg class="haircut__option-icon" width="21" height="20">
+											<use xlink:href="#options-scissors"></use>
+										</svg>
+										Стрижка
+									</li>
+									<li class="haircut__option haircut__option--shave display-none">
+										<svg class="haircut__option-icon" width="23" height="21">
+											<use xlink:href="#options-beard"></use>
+										</svg>
+										Бритье
+									</li>
+									<li class="haircut__option haircut__option--mustache display-none">
+										<svg class="haircut__option-icon" width="45" height="12">
+											<use xlink:href="#options-mustache"></use>
+										</svg>
+										Усы
+									</li>
+								</ul>
+							</div>
+						</article>
+					</li>
+
+	
+					<li class="works__item">
+						<article class="works__card haircut">
+							<div class="haircut__wrapper haircut__wrapper--photo">
+								<picture>
+									<source media="(min-width: 1200px)" srcset="img/works-3-desktop.jpg">
+									<source media="(min-width: 768px)" srcset="img/works-3-tablet.jpg">
+									<img class="haircut__photo" src="img/works-3-mobile.jpg" alt="Фото довольного клиента">
+								</picture>
+								<div class="haircut__best">Работа месяца</div>
+							</div>
+							<div class="haircut__wrapper haircut__wrapper--description">
+								<div class="haircut__wrapper haircut__wrapper--text">
+									<h3 class="haircut__heading">Владимир Иваныч</h3>
+									<p class="haircut__comment">К зимнему сезону - готов!</p>
+								</div>
+								<ul class="haircut__options">
+									<li class="haircut__option haircut__option--shear display-none">
+										<svg class="haircut__option-icon" width="21" height="20">
+											<use xlink:href="#options-scissors"></use>
+										</svg>
+										Стрижка
+									</li>
+									<li class="haircut__option haircut__option--shave">
+										<svg class="haircut__option-icon" width="23" height="21">
+											<use xlink:href="#options-beard"></use>
+										</svg>
+										Бритье
+									</li>
+									<li class="haircut__option haircut__option--mustache ">
+										<svg class="haircut__option-icon" width="45" height="12">
+											<use xlink:href="#options-mustache"></use>
+										</svg>
+										Усы
+									</li>
+								</ul>
+							</div>
+						</article>
+					</li>
+
+	
+					<li class="works__item">
+						<article class="works__card haircut">
+							<div class="haircut__wrapper haircut__wrapper--photo">
+								<picture>
+									<source media="(min-width: 1200px)" srcset="img/works-4-desktop.jpg">
+									<source media="(min-width: 768px)" srcset="img/works-4-tablet.jpg">
+									<img class="haircut__photo" src="img/works-4-mobile.jpg" alt="Фото довольного клиента">
+								</picture>
+								<div class="haircut__best">Работа месяца</div>
+							</div>	
+							<div class="haircut__wrapper haircut__wrapper--description">
+								<div class="haircut__wrapper haircut__wrapper--text">
+									<h3 class="haircut__heading">Винстон Синий</h3>
+									<p class="haircut__comment">Как только заростаю и волосы начинают мешать видеть - бегом в Бородинский!</p>
+								</div>
+								<ul class="haircut__options">
+									<li class="haircut__option haircut__option--shear">
+										<svg class="haircut__option-icon" width="21" height="20">
+											<use xlink:href="#options-scissors"></use>
+										</svg>
+										Стрижка
+									</li>
+									<li class="haircut__option haircut__option--shave display-none">
+										<svg class="haircut__option-icon" width="23" height="21">
+											<use xlink:href="#options-beard"></use>
+										</svg>
+										Бритье
+									</li>
+									<li class="haircut__option haircut__option--mustache display-none">
+										<svg class="haircut__option-icon" width="45" height="12">
+											<use xlink:href="#options-mustache"></use>
+										</svg>
+										Усы
+									</li>
+								</ul>
+							</div>
+						</article>
+					</li>
+
+
+				</ul>
+
+			</section>
+
+		</main>
+
+		<section class="prices">
+
+			<h2 class="prices__heading">Прейскурант</h2>
+
+			<div class="prices__wrapper">
+
+				<table class="prices__table">
+					<tbody>
+						<tr class="prices__row">
+							<td class="prices__cell prices__cell--number">1</td>
+							<td class="prices__cell prices__cell--title">Классическая стрижка</td>
+							<td class="prices__cell prices__cell--option"><span class="prices__brackets">(</span>с мытьем головы<span class="prices__brackets">)</span></td>
+							<td class="prices__cell prices__cell--price">1 500 руб.</td>
+						</tr>
+						<tr class="prices__row">
+							<td class="prices__cell prices__cell--number">2</td>
+							<td class="prices__cell prices__cell--title">Современный вариант</td>
+							<td class="prices__cell prices__cell--option"><span class="prices__brackets">(</span>с мытьем головы<span class="prices__brackets">)</span></td>
+							<td class="prices__cell prices__cell--price">1 500 руб.</td>
+						</tr>
+						<tr class="prices__row">
+							<td class="prices__cell prices__cell--number">3</td>
+							<td class="prices__cell prices__cell--title">Индивидуальный подход</td>
+							<td class="prices__cell prices__cell--option"><span class="prices__brackets">(</span>с мытьем головы<span class="prices__brackets">)</span></td>
+							<td class="prices__cell prices__cell--price">2 000 руб.</td>
+						</tr>
+						<tr class="prices__row">
+							<td class="prices__cell prices__cell--number">4</td>
+							<td class="prices__cell prices__cell--title">Бритьё головы</td>
+							<td class="prices__cell prices__cell--option"><span class="prices__brackets">(</span>без мытья<span class="prices__brackets">)</span></td>
+							<td class="prices__cell prices__cell--price">500 руб.</td>
+						</tr>
+						<tr class="prices__row">
+							<td class="prices__cell prices__cell--number">5</td>
+							<td class="prices__cell prices__cell--title">Бритьё головы</td>
+							<td class="prices__cell prices__cell--option"><span class="prices__brackets">(</span>с мытьем головы<span class="prices__brackets">)</span></td>
+							<td class="prices__cell prices__cell--price">1 000 руб.</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="prices__discount discount">
+					<svg class="discount__icon" width="58" height="57">
+						<use xlink:href="#clock"></use>
+					</svg>
+					<p class="discount__text">С 10:00 до 14:00 <span class="br"></span> скидка 20%</p>
+				</div>
+
+			</div>
+
+		</section>
+		
+
+		<footer class="footer">
+			<div class="footer__inner">
+
+				<div class="footer__contacts">
+					<span class="footer__heading">Бабершоп Бородинский</span>
+					<p class="footer__address">г. Москва, ул. Маленковская, д. 42</p>
+					<p class="footer__phone">Тел.: +7 (499) 264-99-09</p>
+					<a class="footer__link footer__link--phone" href="tel:+74992649909">+7(499)264-99-09</a>
+				</div>
+	
+				<div class="footer__socials social">
+					<span class="social__text">Давайте дружить!</span>
+					<div class="social__wrapper">
+						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank">
+							Открыть нашу страницу "В контакте"
+							<svg class="social__icon social__icon--vk" width="35" height="35">
+								<use xlink:href="#socials-vk"></use>
+							</svg>
+						</a>
+						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank">
+							Открыть нашу страницу на "Фейсбук"
+							<svg class="social__icon social__icon--facebook" width="35" height="35">
+								<use xlink:href="#socials-facebook"></use>
+							</svg>
+						</a>
+						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank">
+							Открыть наш профиль "Инстаграм"
+							<svg class="social__icon social__icon--instagram" width="35" height="35">
+								<use xlink:href="#socials-instagram"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+	
+				<div class="footer__development">
+					<footer class="footer__text">Разработано:</footer>
+					<a class="footer__link" href="https://htmlacademy.ru/" target="_blank">Html academy</a>
+				</div>
+
+			</div>		
+		</footer>
+
+	</div>
+
+	<section class="login popup secondary display-none">
+		<h2 class="login__heading">Личный кабинет</h2>
+		<p class="login__text">Введите свой логин и пароль, чтобы войти</p>
+		<form action="https://echo.htmlacademy.ru" method="POST">
+			<div class="login__wrapper">
+
+				<div class="login__cell">
+					<input class="login__input login__input--name" type="text" name="login__name" id="login__name" required>
+					<label class="login__label login__label--name" for="login__name">Логин</label>	
+				</div>
+				<div class="login__cell">
+					<input class="login__input login__input--password" type="password" name="login__password" id="login__password" required>
+					<label class="login__label login__label--password" for="login__password">Пароль</label>
+				</div>
+				
+			</div>
+
+			<div class="popup__row">
+				<div class="popup__cell">
+					<input class="login__input--save-password" type="checkbox" name="save-password" id="login__save-password-input">
+					<label class="login__label--save-password" for="login__save-password-input">Запомните меня</label>
+				</div>
+				<a class ="login__link" href="#">Я забыл пароль!</a>
+			</div>
+
+			<div class="login__buttons">
+				<button class="login__button button" type="submit">Войти<span> в личный кабинет</span></button>
+				<button class="popup__buttton popup__button--close button" type="button">Закрыть<span> модальное окно</span></button>
+			</div>
+		</form>
+		
+	</section>
+
+	<template id="news__template">
+		<li class="news__item">
+			<article class="news__card">
+				<div class="news__date">
+					<span class="news__day">9</span>
+					<span class="news__month">сент</span>
+				</div>
+				<p class="news__text">
+					Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!
+				</p>
+			</article>
+		</li>
+	</template>
+
+	<script src="js/menu.js"></script>
+	<script src="js/login.js"></script>
+	<!-- <script src="js/script.js"></script> -->
+</body>
+</html>

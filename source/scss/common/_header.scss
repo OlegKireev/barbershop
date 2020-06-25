@@ -1,0 +1,108 @@
+.header {
+    padding-top: 30px;
+    text-align: center;
+    
+    // Стили для всех страниц кроме главной
+    &--photo {
+
+        @include tablet {
+            height: 283px;
+        }
+
+        @include desktop {
+            height: 380px;
+            
+        }
+
+        // Вырез фона снизу секции
+        &::after {
+            
+            @include tablet {
+                content: "";
+                position: absolute;
+                display: block;
+                background-color: $secondary-color;
+                bottom: 178px;
+                left: 0;
+                width: 100%;
+                min-height: 100%;
+                mask-image: url('../img/icon/white-angle-tablet.svg');
+                mask-repeat: no-repeat;
+                mask-size: cover;
+                mask-position: 50% 100%;
+                // background: url('../img/icon/white-angle-tablet.svg') 50% 0% no-repeat;
+                // background-repeat: no-repeat;
+                // background-size: cover;
+                pointer-events: none;
+                transform-origin: bottom center;
+                transform: scaleY(0.5);
+            }
+            
+            @include desktop {
+                bottom: 73px;
+                left: 50%;
+                width: 1200px;
+                transform: translateX(-50%) scaleY(0.5);
+            }
+        }
+    }
+
+    @include tablet {
+        padding-top: 0;
+        background-color: $dark-gray;
+        background-image: url('../img/back-tablet.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        background-size: cover;
+    }
+}
+
+.header__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 85px;
+
+    @include tablet {
+        min-height: 469px;
+    }
+
+    @include desktop {
+        min-height: 720px;
+    }
+}
+
+.header__menu {
+    @include tablet {
+        order: 1;
+    }
+}
+
+.header__logo-wrapper {
+    margin-bottom: 20px;
+
+    @include tablet {
+        order: 2;
+        margin-top: 40px;
+        margin-bottom: 252px;
+    }
+
+    @include desktop {
+        margin-top: 60px;
+    }
+}
+
+.header__logo {
+    
+    pointer-events: all;
+
+    @include tablet {
+        width: 370px;
+        height: 101px;
+
+    }
+    
+    @include desktop {
+        margin-top: 0px;
+        height: 153px;
+    }
+}

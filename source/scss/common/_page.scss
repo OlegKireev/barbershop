@@ -1,0 +1,79 @@
+.page-wrapper {
+    margin: 0 auto;
+    max-width: $tablet;
+    background-color: #292929;
+    // Чтобы скрытое меню не добваляло горизонтальный скролл
+    overflow: hidden;
+
+    @include tablet {
+        max-width: $desktop;
+        background-color: #353535;      
+    }
+
+    @include desktop {
+        max-width: $desktop;
+    }
+
+    &--photo {
+        background-color: #353535;
+    }
+}
+
+.page-main {
+    position: relative;
+    padding-bottom: 10vw;
+
+    // Вырез фона снизу секции
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: #353535;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        mask-image: url('../img/icon/white-angle-tablet.svg');
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        mask-position: 50% 100%;
+        // background: url('../img/icon/white-angle-tablet.svg') 50% 0% no-repeat;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        pointer-events: none;
+        
+        
+        @include tablet {
+            bottom: -1px;
+            transform-origin: bottom center;
+            transform: scaleY(0.5);
+        }
+        
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &--photo {
+        padding-left: $mobile-padding;
+        padding-right: $mobile-padding;  
+
+        @include tablet {
+            padding-left: $tablet-padding;
+            padding-right: $tablet-padding;
+        }
+
+        @include desktop {
+            padding-left: $desktop-padding;
+            padding-right: $desktop-padding;
+        }
+    }
+
+    @include tablet {
+        padding-bottom: 5vw;
+    }
+
+    @include desktop {
+        padding-bottom: 22px;
+    }
+}

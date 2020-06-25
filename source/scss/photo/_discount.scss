@@ -1,0 +1,71 @@
+.discount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    // Добавляем перенос строки
+    & .br {
+        display: block;
+
+        // Убираем перенос строки
+        @include tablet {
+            display: inline;
+        }
+
+        @include desktop {
+            display: block;
+        }
+    }
+
+    @include tablet {
+        justify-content: start;
+    }
+
+    @include desktop {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+.discount__icon {
+    fill: $white;
+    width: 25%;
+    margin-right: 35px;
+
+    @include tablet {
+        width: 71px;
+        height: 71px;
+        margin-left: 27px;
+        margin-right: 87px;
+    }
+
+    @include desktop {
+        width: 142px;
+        height: 139px;
+        margin: 0 60px 30px;
+    }
+}
+
+.discount__text {
+    text-align: left;
+    line-height: 27px;
+    font-size: 20px;
+
+    @include tablet {
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    @include desktop {
+        font-size: 20px;
+        font-weight: normal;
+        text-align: center;
+    }
+}
