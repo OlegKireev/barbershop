@@ -28,9 +28,10 @@ $black: #0a0a0a;
 $white: #fefefe;
 // $background-color: $dark-gray;
 $background-color: #353535;
+$border-color: #e5ddd5;
 
 
-// 4. Typography
+// 2. Typography
 // -------------
 
 $body-font-family: 'PT Sans Narrow', 'Open Sans', sans-serif;
@@ -52,3 +53,31 @@ $link-color: $white;
 $link-color-visited: $link-color;
 $link-color-hover: $white;
 $link-color-active: $link-color-hover;
+
+// 3. Input
+// ----------
+
+$input-width: 100%;
+$input-font-size: 18px;
+$input-padding: 10px 45px 15px 19px;
+$input-line-height: 1;
+$input-border: 1px solid $border-color;
+$input-border-color-hover: darken($border-color, 10%);
+$input-background-color-hover: darken($border-color, 10%);
+$input-placeholder-color: $black;
+
+
+$checkbox-width: 33px;
+$checkbox-height: 33px;
+$checkbox-border: $input-border;
+$checkbox-background-color: $white;
+$checkbox-border-color-hover: $input-border-color-hover;
+$checkbox-background-color-hover: $input-background-color-hover;
+
+$radio-size: 50px;
+$radio-border-radius: 50%;
+$radio-border: $input-border;
+$radio-background-color: $white;
+$radio-border-color-hover: $input-border-color-hover;
+$radio-background-color-hover: $input-background-color-hover;
+

@@ -22,7 +22,7 @@
                 position: absolute;
                 display: block;
                 background-color: $secondary-color;
-                bottom: 178px;
+                bottom: 150px;
                 left: 0;
                 width: 100%;
                 min-height: 100%;
@@ -39,7 +39,8 @@
             }
             
             @include desktop {
-                bottom: 73px;
+                // bottom: 73px;
+                bottom: 53px;
                 left: 50%;
                 width: 1200px;
                 transform: translateX(-50%) scaleY(0.5);

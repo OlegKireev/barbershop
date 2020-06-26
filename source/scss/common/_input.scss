@@ -1,0 +1,154 @@
+// Обычные инпуты
+input,
+textarea {
+    position: relative;
+    width: $input-width;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    line-height: $input-line-height;
+    background-size: 15px;
+    background-position: 94% 50%;
+    background-repeat: no-repeat;
+    border: $input-border;
+
+    &:hover {
+        border-color: $input-border-color-hover;
+    }
+
+    &:active {
+        border-color: #999999;
+    }
+
+    &--name {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 15 15'%3E%3Cdefs%3E%3Cpath id='a' d='M14.45 12.58c-.44-.41-.91-1.15-3.24-1.49-2.26-.32-1.89-1.51-1.9-1.58 0-.18.03-.94.03-.94s.79-.61 1.14-1.61c.56-.35.77-.4.87-.8 0 0 .16-1.56-.36-1.56 0 0-.25.08-.17-.28.08-.36.05-1.47.01-1.86-.04-.39.02-1.52-.82-1.68-.57-.11-.65 0-.93-.04C8.8.72 8.46 0 7.94 0L6.87.23c-.52 0-.44.23-.72.27-.28.04.05-.11-.79.04-.84.16-1.14 1.23-1.18 1.62-.04.39-.05 1.5-.02 2.1.08.36-.2.36-.2.36-.5-.03-.28 1.52-.28 1.52.07.37-.03.56.72.86.36 1 1.29 1.53 1.29 1.53s0 .62.02 1.07c-.08-.04.26 1.16-2.06 1.5-2.32.34-2.77 1.08-3.2 1.49-.45.41-.43 2.4-.43 2.4L15 15s-.11-2-.55-2.42z'/%3E%3C/defs%3E%3CclipPath id='b'%3E%3Cuse xlink:href='%23a' overflow='visible'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23b)'%3E%3Cimage width='15' height='15' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABJJREFUeNpiYBgFo2AoAYAAAwAC sgABvwr0rwAAAABJRU5ErkJggg==' overflow='visible'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    &--password {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 15.01 17'%3E%3Cdefs%3E%3Cpath id='a' d='M13.76 5.44l-.75.01C13.01 2.3 10.41 0 7.4 0 4.38 0 1.94 2.3 1.94 5.45h-.63S.05 5.17.05 6.53v9.05S-.38 17 1.19 17h12.57s1.25-.11 1.25-1.42V6.97s.11-1.53-1.25-1.53zm-5.22 9.55l-2.64.02s.85-3.46.65-3.53a2.055 2.055 0 01-1.33-1.94c0-1.13.88-2.05 1.96-2.05s1.96.92 1.96 2.05c0 .88-.52 1.62-1.26 1.92-.11.03.66 3.53.66 3.53zM3.26 5.44c0-2.48 1.92-4.14 4.28-4.14 2.37 0 4.28 1.67 4.28 4.14H3.26z'/%3E%3C/defs%3E%3CclipPath id='b'%3E%3Cuse xlink:href='%23a' overflow='visible'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23b)'%3E%3Cimage width='15' height='17' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARCAIAAACNaGH2AAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABNJREFUeNpiYBgFo2AUQABAgAEA Aw4AAUE6WW8AAAAASUVORK5CYII=' transform='translate(.007 .002)' overflow='visible'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    @include tablet {
+        padding: 25px 50px 20px 20px;
+        font-size: 24px;
+    }
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: $input-placeholder-color;
+
+}
+
+textarea {
+    resize: none; 
+}
+
+// Радиобаттон
+input[type="radio"] {
+    display: none;
+}
+
+// Стилизация радиобаттона (Расположение (top/left) задавай в отедельном
+// стиле для блока)
+input[type="radio"] + label {
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: relative;
+        width: $radio-size;
+        height: $radio-size;
+        background: $radio-background-color;
+        border: $radio-border;
+        border-radius: $radio-border-radius;
+        transition: 0.2s all ease;
+    }
+
+    &:hover::before,
+    &:focus::before {
+        border-color: $radio-border-color-hover;
+    }
+
+    &:active::before {
+        background-color: $radio-background-color-hover;
+    }
+
+    // Кружок радиобаттона
+    &::after {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 18px;
+        height: 18px;
+        border: 1px solid #e5ddd5;
+        border-radius: 50%;
+        opacity: 0;
+        transition: 0.2s all ease;
+    }
+}
+
+// Отмеченный радиобаттон
+input[type="radio"]:checked + label {
+    transition: 0.2s all ease;
+
+    &::after {
+        opacity: 1;
+    }
+}
+
+
+// Чекбокс
+input[type="checkbox"] {
+    display: none;
+}
+
+// Лейбл чекбокса
+input[type="checkbox"] + label {
+    position: relative;
+    margin-left: 60px;
+    transition: 0.2s all ease;
+
+    // Стилизация чекбокса
+    &::before {
+        content: "";
+        width: $checkbox-width;
+        height: $checkbox-height;
+        background: $checkbox-background-color;
+        border: $checkbox-border;
+    }
+
+    &:hover::before,
+    &:focus::before {
+        border-color: $checkbox-border-color-hover;
+    }
+
+    &:active::before {
+        background-color: $checkbox-background-color-hover;
+    }
+
+    // Галочка
+    &::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -52px;
+        width: 20px;
+        height: 8px;
+        opacity: 0;
+        border-left: 2px solid $black;
+        border-bottom: 2px solid $black;
+        transform: rotate(-45deg);
+        transition: 0.2s all ease;
+    }
+}
+
+// Отмеченный чекбокс
+input[type="checkbox"]:checked + label {
+    transition: 0.2s all ease;
+
+    &::after {
+        opacity: 1;
+    }
+}

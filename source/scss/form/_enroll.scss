@@ -1,0 +1,179 @@
+.enroll__heading {
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    @include tablet {
+        font-size: 30px;
+        // Линии слева и справа от заголовков
+        background-image: linear-gradient(to right, transparent 0% , transparent 20%, $secondary-color 20%,$secondary-color 80%,transparent 80%),
+                            linear-gradient(to bottom, transparent 0% , transparent 48%, #e5ddd5 48%,#e5ddd5 51%,transparent 51%);
+    }
+}
+
+.enroll__container {
+    @include tablet {
+        margin-bottom: 30px;
+    }
+}
+
+.enroll__container--full-name {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        & input {
+            max-width: 31%;
+        }
+    }
+}
+
+.enroll__container--contacts {
+    @include desktop{
+        display: flex;
+        justify-content: space-between;
+    }
+    @include desktop {
+        & input {
+            max-width: 48%;
+        }
+    }
+}
+
+
+.enroll__beard-icon {
+    fill: $main-color;
+}
+
+
+.enroll__container {
+    margin-bottom: 24px;
+
+    @include tablet {
+        margin-bottom: 29px;
+    }
+}
+
+.enroll__container--beard {
+    padding-top: 39px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include tablet {
+        justify-content: space-around;
+        padding-top: 46px;
+    }
+
+    @include desktop {
+        padding-top: 56px;
+    }
+}
+
+.enroll__input {
+    padding: 18px 23px;
+    margin-bottom: 6px;
+}
+
+.enroll textarea {
+    @include tablet {
+        padding: 22px 23px;
+        margin-bottom: 16px;
+    }
+    @include desktop {
+        margin-bottom: 32px;
+    }
+}
+
+
+.enroll__input--phone {
+    margin-bottom: 36px;
+
+    @include desktop {
+        margin-bottom: 6px;
+    }
+}
+
+// Блок с инпутом и иконкой бороды
+.enroll__label--beard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90px;
+    margin-bottom: 33px;
+
+    &::before {
+        margin-bottom: 10px;
+
+        @include tablet {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.enroll__label--beard,
+.enroll__label--option {
+    @include tablet {
+        font-size: 24px;
+    }
+}
+
+.enroll__beard-name {
+    margin-bottom: 10px;
+
+    @include tablet {
+        margin-bottom: 30px;
+    }
+}
+
+// Расположение чекбокса
+.enroll input[type="checkbox"] + label {
+    &::before {
+        position: absolute;
+        top: -5px;
+        left: -60px;
+
+        @include tablet {
+            top: 0px;
+        }
+    }
+}
+
+
+.enroll__container--additional {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 68px;
+        margin-bottom: 10px;
+    }
+
+    @include desktop {
+        margin-bottom: 26px;
+    }
+}
+
+.enroll__label--option {
+    margin-bottom: 33px;
+
+    @include tablet {
+        min-width: 40%;
+        margin-bottom: 52px;
+    }
+
+    @include desktop {
+        min-width: 27%;
+    }
+}
+
+.enroll__button {
+    font-size: 24px;
+    padding: 20px;
+}

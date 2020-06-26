@@ -1,0 +1,57 @@
+.form {
+    padding-top: 29px;
+    padding-bottom: 42px;
+
+    @include tablet {
+        padding-top: 59px;
+    }
+
+    @include desktop {
+        padding-bottom: 65px;
+    }
+}
+
+.form__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 68px;
+
+
+    @include tablet {
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        margin-bottom: 65px;
+    }
+}
+
+.form__link {
+    display: none;
+
+    @include tablet {
+        display: block;
+        width: 25%;
+        text-align: center;
+    }
+
+    @include desktop {
+        width: 16.66%;
+    }
+}
+
+.form__heading {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include tablet {
+        font-size: 40px;
+        text-align: left;
+    }
+
+    @include desktop {
+        font-size: 40px;
+    }
+}

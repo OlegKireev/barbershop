@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preload" href="fonts/PTSansNarrow-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/PTSansNarrow-Bold.woff2" as="font">
+
+	<link rel="stylesheet" href="css/style.css">
+	<title>Barbershop</title>
+	<meta name="description" content="Стрижка у нас это выгодно!">
+</head>
+
+<body>
+
+	<!-- Подключаем svg-спрайт -->
+	<div class="svg-sprite" style="display:none;">
+        <include src="build/img/icon.svg"></include>
+	</div>
+	
+	<div class="page-wrapper page-wrapper--photo">
+
+		<header class="header header--photo">
+
+			<div class="header__inner">
+
+				<div class="header__logo-wrapper">
+					<a href="index.html" class="header__link">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="img/icon/logo-big.svg">
+							<source media="(min-width: 768px)" srcset="img/icon/logo-medium.svg">
+							<img class="header__logo" src="img/icon/logo-small.svg" width="226" height="30" alt="На главную">
+						</picture>
+					</a>
+				</div>
+
+				<div class="header__menu menu">
+	
+					<div class="menu__current">Записаться</div>
+					<button class="menu__button">Показать меню<span class="menu__icon"></span></button>
+					<nav>
+						<ul class="menu__list">
+							<li><a class="menu__link" href="index.html">Главная</a></li>
+							<li><a class="menu__link" href="photo.html">Наши работы</a></li>
+							<li><a class="menu__link menu__link--active">Записаться</a></li>
+							<li><a class="menu__link" href="#">Контакты</a></li>
+							<li>
+
+								<ul class="menu__login">
+									<li>
+										<a class="menu__link menu__link--login" href="#">
+											<svg class="menu__login-icon" width="16" height="16">
+												<use xlink:href="#login"></use>
+											</svg>
+											<span>Войти</span>
+										</a>
+									</li>
+								</ul>
+
+							</li>
+						</ul>
+						
+					</nav>
+	
+				</div>
+
+			</div>
+
+		</header>
+
+		<main class="page-main page-main--photo secondary">
+
+			<section class="form">
+
+				<div class="form__wrap">
+					<h1 class="form__heading">Запись на стрижку</h1>
+					<a class="form__link button" href="index.html">На главную</a>
+				</div>
+
+				
+					
+					<form class="form__form enroll" action="https://echo.htmlacademy.ru" method="POST">
+					
+						<div class="enroll__container enroll__container--full-name">
+								<label class="visually-hidden" for="enroll__name">Имя</label>
+								<input class="input enroll__input enroll__input--name" type="text" name="name" id="enroll__name" placeholder="Имя" required>
+								<label class="visually-hidden" for="enroll__surname">Фамилия</label>
+								<input class="input enroll__input enroll__input--surname" type="text" name="surname" id="enroll__surname" placeholder="Фамилия">
+								<label class="visually-hidden" for="enroll__patronym">Отчество</label>
+								<input class="input enroll__input enroll__input--patronym" type="text" name="patronym" id="enroll__patronym" placeholder="Отчество">
+							</div>
+
+						<div class="enroll__container enroll__container--contacts">
+								<label class="visually-hidden" for="enroll__phone">Контактный телефон</label>
+								<input class="input enroll__input enroll__input--phone" type="number" name="enroll__phone" id="enroll__phone" placeholder="Контактный телефон">
+								<label class="visually-hidden" for="enroll__email">Контактный e-mail</label>
+								<input class="input enroll__input enroll__input--email" type="email" name="enroll__email" id="enroll__email" placeholder="Контактный e-mail">
+						</div>
+
+						<div class="enroll__container enroll__container--text">
+							<label class="visually-hidden" for="enroll__message">Доп. информация для мастера</label>
+							<textarea name="enoll__message" id="enoll__message" cols="10" rows="7" placeholder="Доп. информация для мастера"></textarea>
+						</div>
+
+						<h2 class="enroll__heading">Выберите модель бороды:</h2>
+						<div class="enroll__container enroll__container--beard">
+							<input type="radio" name="beard" id="enroll__beard--admiral" value="admiral">
+							<label class="enroll__label--beard" for="enroll__beard--admiral">
+								<span class="enroll__beard-name">Адмирал</span>
+								<svg class="enroll__beard-icon enroll__beard-icon--admiral" width="52" height="49">
+									<use xlink:href="#beard-1"></use>
+								</svg>
+							</label>
+							<input type="radio" name="beard" id="enroll__beard--lumberjack" value="lumberkack">
+							<label class="enroll__label--beard" for="enroll__beard--lumberjack">
+								<span class="enroll__beard-name">Лесопуб</span>
+								<svg class="enroll__beard-icon enroll__beard-icon--lumberjack" width="58" height="68">
+									<use xlink:href="#beard-2"></use>
+								</svg>
+							</label>
+							<input type="radio" name="beard" id="enroll__beard--polar" value="polar">
+							<label class="enroll__label--beard" for="enroll__beard--polar">
+								<span class="enroll__beard-name">Полярник</span>
+								<svg class="enroll__beard-icon enroll__beard-icon--polar" width="63" height="78">
+									<use xlink:href="#beard-3"></use>
+								</svg>
+								</label>
+							<input type="radio" name="beard" id="enroll__beard--boyar" value="boyar">
+							<label class="enroll__label--beard" for="enroll__beard--boyar">
+								<span class="enroll__beard-name">Боярин</span>
+								<svg class="enroll__beard-icon enroll__beard-icon--boyar" width="57" height="97">
+									<use xlink:href="#beard-4"></use>
+								</svg>
+								</label>
+							<input type="radio" name="beard" id="enroll__beard--sage" value="sage">
+							<label class="enroll__label--beard" for="enroll__beard--sage">
+								<span class="enroll__beard-name">Мудрец</span>
+								<svg class="enroll__beard-icon enroll__beard-icon--sage" width="46" height="104">
+									<use xlink:href="#beard-5"></use>
+								</svg>
+							</label>
+						</div>
+
+						<h2 class="enroll__heading">Дополнительные услуги:</h2>
+						<div class="enroll__container enroll__container--additional">
+							<input type="checkbox" name="paint-beard" id="enroll__additional--paint-beard">
+							<label class="enroll__label--option" for="enroll__additional--paint-beard">Покрасить бороду</label>
+							<input type="checkbox" name="wind-up-mustache" id="enroll__additional--wind-up-mustache">
+							<label class="enroll__label--option" for="enroll__additional--wind-up-mustache">Накрутить усы</label>
+							<input type="checkbox" name="trim-hair" id="enroll__additional--trim-hair">
+							<label class="enroll__label--option" for="enroll__additional--trim-hair">Подровнять виски</label>
+							<input type="checkbox" name="comb-beard" id="enroll__additional--comb-beard">
+							<label class="enroll__label--option" for="enroll__additional--comb-beard">Причесать бороду</label>
+							<input type="checkbox" name="delete-gray-hair" id="enroll__additional--delete-gray-hair">
+							<label class="enroll__label--option" for="enroll__additional--delete-gray-hair">Убрать седину</label>
+							<input type="checkbox" name="polish-bald" id="enroll__additional--polish-bald">
+							<label class="enroll__label--option" for="enroll__additional--polish-bald">Отполировать лысину</label>
+						</div>
+
+						<!-- <div class="enroll__wrapper"> -->
+							<button class="button button--alternate enroll__button" type="submit">Отправить заявку</button>
+						<!-- </div> -->
+
+
+					</form>
+
+
+				
+
+			</section>
+
+		</main>	
+
+		<footer class="footer">
+			<div class="footer__inner">
+
+				<div class="footer__contacts">
+					<span class="footer__heading">Бабершоп Бородинский</span>
+					<p class="footer__address">г. Москва, ул. Маленковская, д. 42</p>
+					<p class="footer__phone">Тел.: +7 (499) 264-99-09</p>
+					<a class="footer__link footer__link--phone" href="tel:+74992649909">+7(499)264-99-09</a>
+				</div>
+	
+				<div class="footer__socials social">
+					<span class="social__text">Давайте дружить!</span>
+					<div class="social__wrapper">
+						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank">
+							Открыть нашу страницу "В контакте"
+							<svg class="social__icon social__icon--vk" width="35" height="35">
+								<use xlink:href="#socials-vk"></use>
+							</svg>
+						</a>
+						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank">
+							Открыть нашу страницу на "Фейсбук"
+							<svg class="social__icon social__icon--facebook" width="35" height="35">
+								<use xlink:href="#socials-facebook"></use>
+							</svg>
+						</a>
+						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank">
+							Открыть наш профиль "Инстаграм"
+							<svg class="social__icon social__icon--instagram" width="35" height="35">
+								<use xlink:href="#socials-instagram"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+	
+				<div class="footer__development">
+					<footer class="footer__text">Разработано:</footer>
+					<a class="footer__link" href="https://htmlacademy.ru/" target="_blank">Html academy</a>
+				</div>
+
+			</div>		
+		</footer>
+
+	</div>
+
+	<section class="login popup secondary display-none">
+		<h2 class="login__heading">Личный кабинет</h2>
+		<p class="login__text">Введите свой логин и пароль, чтобы войти</p>
+		<form action="https://echo.htmlacademy.ru" method="POST">
+			<div class="login__wrapper">
+
+				<div class="login__cell">
+					<input class="input login__input login__input--name" type="text" name="login__name" id="login__name" required>
+					<label class="login__label login__label--name" for="login__name">Логин</label>	
+				</div>
+				<div class="login__cell">
+					<input class="input login__input login__input--password" type="password" name="login__password" id="login__password" required>
+					<label class="login__label login__label--password" for="login__password">Пароль</label>
+				</div>
+				
+			</div>
+
+			<div class="popup__row">
+				<div class="popup__cell">
+					<input class="login__input--save-password" type="checkbox" name="save-password" id="login__save-password-input">
+					<label class="login__label--save-password" for="login__save-password-input">Запомните меня</label>
+				</div>
+				<a class ="login__link" href="#">Я забыл пароль!</a>
+			</div>
+
+			<div class="login__buttons">
+				<button class="login__button button" type="submit">Войти<span> в личный кабинет</span></button>
+				<button class="popup__buttton popup__button--close button" type="button">Закрыть<span> модальное окно</span></button>
+			</div>
+		</form>
+		
+	</section>
+
+	<template id="news__template">
+		<li class="news__item">
+			<article class="news__card">
+				<div class="news__date">
+					<span class="news__day">9</span>
+					<span class="news__month">сент</span>
+				</div>
+				<p class="news__text">
+					Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!
+				</p>
+			</article>
+		</li>
+	</template>
+
+	<script src="js/menu.js"></script>
+	<script src="js/login.js"></script>
+	<!-- <script src="js/script.js"></script> -->
+</body>
+</html>
