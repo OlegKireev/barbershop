@@ -61,7 +61,7 @@
     padding-top: 39px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 
     @include tablet {
         justify-content: space-around;
@@ -73,9 +73,34 @@
     }
 }
 
+.enroll__container--additional {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 68px;
+        margin-bottom: 10px;
+    }
+
+    @include desktop {
+        margin-bottom: 26px;
+    }
+}
+
 .enroll__input {
     padding: 18px 23px;
     margin-bottom: 6px;
+}
+
+.enroll__input--phone {
+    // margin-bottom: 36px;
+
+    @include desktop {
+        margin-bottom: 6px;
+    }
 }
 
 .enroll textarea {
@@ -89,13 +114,7 @@
 }
 
 
-.enroll__input--phone {
-    margin-bottom: 36px;
 
-    @include desktop {
-        margin-bottom: 6px;
-    }
-}
 
 // Блок с инпутом и иконкой бороды
 .enroll__label--beard {
@@ -137,28 +156,13 @@
         left: -60px;
 
         @include tablet {
-            top: 0px;
+            top: -5px;
         }
     }
 }
 
 
-.enroll__container--additional {
-    display: flex;
-    flex-direction: column;
-    padding-top: 40px;
 
-    @include tablet {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding-top: 68px;
-        margin-bottom: 10px;
-    }
-
-    @include desktop {
-        margin-bottom: 26px;
-    }
-}
 
 .enroll__label--option {
     margin-bottom: 33px;

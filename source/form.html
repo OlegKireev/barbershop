@@ -12,7 +12,7 @@
 	<meta name="description" content="Стрижка у нас это выгодно!">
 </head>
 
-<body>
+<body class="page-body">
 
 	<!-- Подключаем svg-спрайт -->
 	<div class="svg-sprite" style="display:none;">
@@ -44,14 +44,14 @@
 							<li><a class="menu__link" href="index.html">Главная</a></li>
 							<li><a class="menu__link" href="photo.html">Наши работы</a></li>
 							<li><a class="menu__link menu__link--active">Записаться</a></li>
-							<li><a class="menu__link" href="#">Контакты</a></li>
+							<li><a class="menu__link popup-link" href="#contacts">Контакты</a></li>
 							<li>
 
 								<ul class="menu__login">
 									<li>
-										<a class="menu__link menu__link--login" href="#">
+										<a class="menu__link menu__link--login popup-link" href="#login">
 											<svg class="menu__login-icon" width="16" height="16">
-												<use xlink:href="#login"></use>
+												<use xlink:href="#enter"></use>
 											</svg>
 											<span>Войти</span>
 										</a>
@@ -83,17 +83,17 @@
 					<form class="form__form enroll" action="https://echo.htmlacademy.ru" method="POST">
 					
 						<div class="enroll__container enroll__container--full-name">
-								<label class="visually-hidden" for="enroll__name">Имя</label>
-								<input class="input enroll__input enroll__input--name" type="text" name="name" id="enroll__name" placeholder="Имя" required>
+								<label class="visually-hidden" for="enroll__name">Имя*</label>
+								<input class="input enroll__input enroll__input--name" type="text" name="name" id="enroll__name" placeholder="Имя*" pattern="[A-Za-zА-Яа-яЁё]+" required>
 								<label class="visually-hidden" for="enroll__surname">Фамилия</label>
-								<input class="input enroll__input enroll__input--surname" type="text" name="surname" id="enroll__surname" placeholder="Фамилия">
+								<input class="input enroll__input enroll__input--surname" type="text" name="surname" id="enroll__surname" pattern="[A-Za-zА-Яа-яЁё]+" placeholder="Фамилия">
 								<label class="visually-hidden" for="enroll__patronym">Отчество</label>
-								<input class="input enroll__input enroll__input--patronym" type="text" name="patronym" id="enroll__patronym" placeholder="Отчество">
+								<input class="input enroll__input enroll__input--patronym" type="text" name="patronym" id="enroll__patronym" pattern="[A-Za-zА-Яа-яЁё]+" placeholder="Отчество">
 							</div>
 
 						<div class="enroll__container enroll__container--contacts">
-								<label class="visually-hidden" for="enroll__phone">Контактный телефон</label>
-								<input class="input enroll__input enroll__input--phone" type="number" name="enroll__phone" id="enroll__phone" placeholder="Контактный телефон">
+								<label class="visually-hidden" for="enroll__phone">Контактный телефон*</label>
+								<input class="input enroll__input enroll__input--phone" type="tel" name="enroll__phone" id="enroll__phone" placeholder="Контактный телефон*" maxlength="12" pattern="[0-9,+]{11,12}" required>
 								<label class="visually-hidden" for="enroll__email">Контактный e-mail</label>
 								<input class="input enroll__input enroll__input--email" type="email" name="enroll__email" id="enroll__email" placeholder="Контактный e-mail">
 						</div>
@@ -216,38 +216,58 @@
 
 	</div>
 
-	<section class="login popup secondary display-none">
-		<h2 class="login__heading">Личный кабинет</h2>
-		<p class="login__text">Введите свой логин и пароль, чтобы войти</p>
-		<form action="https://echo.htmlacademy.ru" method="POST">
-			<div class="login__wrapper">
+	<section class="login popup secondary" id="login">
 
-				<div class="login__cell">
-					<input class="input login__input login__input--name" type="text" name="login__name" id="login__name" required>
-					<label class="login__label login__label--name" for="login__name">Логин</label>	
-				</div>
-				<div class="login__cell">
-					<input class="input login__input login__input--password" type="password" name="login__password" id="login__password" required>
-					<label class="login__label login__label--password" for="login__password">Пароль</label>
-				</div>
+		<div class="popup__body">
+			<div class="popup__content">
 				
-			</div>
+				<h2 class="login__heading">Личный кабинет</h2>
+				<p class="login__text">Введите свой логин и пароль, чтобы войти</p>
+				<form action="https://echo.htmlacademy.ru" method="POST">
+					<div class="login__wrapper">
+		
+						<div class="login__cell">
+							<input class="input login__input login__input--name" type="text" name="login__name" id="login__name" placeholder=" " required>
+							<label class="login__label login__label--name" for="login__name">Логин</label>	
+						</div>
+						<div class="login__cell">
+							<input class="input login__input login__input--password" type="password" name="login__password" id="login__password" placeholder=" " pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*" required>
+							<label class="login__label login__label--password" for="login__password">Пароль</label>
+						</div>
+						
+					</div>
+		
+					<div class="popup__row">
+						<div class="popup__cell">
+							<input class="login__input--save-password" type="checkbox" name="save-password" id="login__save-password-input">
+							<label class="login__label--save-password" for="login__save-password-input">Запомните меня</label>
+						</div>
+						<a class ="login__link" href="#">Я забыл пароль!</a>
+					</div>
+		
+					<div class="login__buttons">
+						<button class="login__button button" type="submit">Войти<span> в личный кабинет</span></button>
+						<button class="popup__buttton popup__button--close popup-close button" type="button">Закрыть<span> модальное окно</span></button>
+					</div>
+				</form>
 
-			<div class="popup__row">
-				<div class="popup__cell">
-					<input class="login__input--save-password" type="checkbox" name="save-password" id="login__save-password-input">
-					<label class="login__label--save-password" for="login__save-password-input">Запомните меня</label>
-				</div>
-				<a class ="login__link" href="#">Я забыл пароль!</a>
 			</div>
-
-			<div class="login__buttons">
-				<button class="login__button button" type="submit">Войти<span> в личный кабинет</span></button>
-				<button class="popup__buttton popup__button--close button" type="button">Закрыть<span> модальное окно</span></button>
-			</div>
-		</form>
+		</div>
 		
 	</section>
+
+	<section class="login popup secondary" id="contacts">
+		<div class="popup__body">
+			<div class="popup__content">
+				<h2 class="login__heading">Здарова</h2>
+				<p class="login__text">Еба</p>
+				
+				<button class="popup__buttton popup__button--close button" type="button">Закрыть<span> модальное окно</span></button>
+			</div>
+		</div>
+		
+	</section>
+
 
 	<template id="news__template">
 		<li class="news__item">
@@ -265,6 +285,8 @@
 
 	<script src="js/menu.js"></script>
 	<script src="js/login.js"></script>
+	<script src="js/popup.js"></script>
+	<script src="js/input.js"></script>
 	<!-- <script src="js/script.js"></script> -->
 </body>
 </html>

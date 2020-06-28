@@ -43,10 +43,8 @@
 // }
 
 // Реализация псевдоплейсхолдеров из лейблов
-.login__input[type="text"]:focus + label,
-.login__input[type="text"]:valid + label,
-.login__input[type="password"]:focus + label,
-.login__input[type="password"]:valid + label {
+.login__input[type="text"]:not(:placeholder-shown) + label,
+.login__input[type="password"]:not(:placeholder-shown) + label  {
     top: 3px;
     font-size: 12px;
     margin-bottom: 6px;

@@ -1,7 +1,9 @@
 .header {
     padding-top: 30px;
     text-align: center;
-    
+
+    background-color: $dark-gray;
+
     // Стили для всех страниц кроме главной
     &--photo {
 
@@ -22,7 +24,7 @@
                 position: absolute;
                 display: block;
                 background-color: $secondary-color;
-                bottom: 150px;
+                bottom: 38px;
                 left: 0;
                 width: 100%;
                 min-height: 100%;
@@ -40,7 +42,7 @@
             
             @include desktop {
                 // bottom: 73px;
-                bottom: 53px;
+                bottom: -59px;
                 left: 50%;
                 width: 1200px;
                 transform: translateX(-50%) scaleY(0.5);
@@ -73,6 +75,12 @@
 }
 
 .header__menu {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // z-index: 1;
+    // width: 100%;
+    // margin-top: 85px;
     @include tablet {
         order: 1;
     }

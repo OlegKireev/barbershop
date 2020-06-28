@@ -19,6 +19,16 @@ textarea {
         border-color: #999999;
     }
 
+    // Невалидные поля
+    &:invalid:not(:placeholder-shown) {
+        border-color: tomato;
+    }
+
+    // Валидные поля
+    &:valid:not(:placeholder-shown) {
+        border-color: #30BA09;
+    }
+
     &--name {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 15 15'%3E%3Cdefs%3E%3Cpath id='a' d='M14.45 12.58c-.44-.41-.91-1.15-3.24-1.49-2.26-.32-1.89-1.51-1.9-1.58 0-.18.03-.94.03-.94s.79-.61 1.14-1.61c.56-.35.77-.4.87-.8 0 0 .16-1.56-.36-1.56 0 0-.25.08-.17-.28.08-.36.05-1.47.01-1.86-.04-.39.02-1.52-.82-1.68-.57-.11-.65 0-.93-.04C8.8.72 8.46 0 7.94 0L6.87.23c-.52 0-.44.23-.72.27-.28.04.05-.11-.79.04-.84.16-1.14 1.23-1.18 1.62-.04.39-.05 1.5-.02 2.1.08.36-.2.36-.2.36-.5-.03-.28 1.52-.28 1.52.07.37-.03.56.72.86.36 1 1.29 1.53 1.29 1.53s0 .62.02 1.07c-.08-.04.26 1.16-2.06 1.5-2.32.34-2.77 1.08-3.2 1.49-.45.41-.43 2.4-.43 2.4L15 15s-.11-2-.55-2.42z'/%3E%3C/defs%3E%3CclipPath id='b'%3E%3Cuse xlink:href='%23a' overflow='visible'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23b)'%3E%3Cimage width='15' height='15' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAACXBIWXMAAAsSAAALEgHS3X78AAAA GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABJJREFUeNpiYBgFo2AoAYAAAwAC sgABvwr0rwAAAABJRU5ErkJggg==' overflow='visible'/%3E%3C/g%3E%3C/svg%3E");
     }
@@ -45,7 +55,7 @@ textarea {
 
 // Радиобаттон
 input[type="radio"] {
-    display: none;
+    @include visually-hidden;
 }
 
 // Стилизация радиобаттона (Расположение (top/left) задавай в отедельном
@@ -101,7 +111,7 @@ input[type="radio"]:checked + label {
 
 // Чекбокс
 input[type="checkbox"] {
-    display: none;
+    @include visually-hidden;
 }
 
 // Лейбл чекбокса
