@@ -1,5 +1,5 @@
 .page-body {
-    
+    position: relative;
 }
 
 .page-body--lock {
@@ -29,7 +29,7 @@
 
 .page-main {
     position: relative;
-    padding-bottom: 10vw;
+    padding-bottom: 2vw;
 
     // Вырез фона снизу секции
     &::after {
@@ -40,7 +40,9 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        min-height: 100%;
+        height: 100%;
+        min-height: 60px;
+        max-height: 130px;
         mask-image: url('../img/icon/white-angle-tablet.svg');
         mask-repeat: no-repeat;
         mask-size: cover;
@@ -52,9 +54,8 @@
         
         
         @include tablet {
-            bottom: -1px;
             transform-origin: bottom center;
-            transform: scaleY(0.5);
+            transform: scaleY(0.5) translateY(1px);
         }
         
         @include desktop {
@@ -64,7 +65,13 @@
 
     &--photo {
         padding-left: $mobile-padding;
-        padding-right: $mobile-padding;  
+        padding-right: $mobile-padding;
+        padding-bottom: 8vw;
+
+        &::after {
+            background-color: #353535;
+
+        }
 
         @include tablet {
             padding-left: $tablet-padding;
@@ -74,6 +81,12 @@
         @include desktop {
             padding-left: $desktop-padding;
             padding-right: $desktop-padding;
+        }
+    }
+
+    &--form {
+        &::after {
+            background-color: #292929;
         }
     }
 

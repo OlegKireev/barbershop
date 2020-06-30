@@ -50,6 +50,10 @@
     "uglify": "^0.1.5"
   },
   "dependencies": {
+    "gulp-uglify-es": "^2.0.0",
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-webp": "^6.0.0",
     "js-yaml": "^3.14.0",
     "uglify-js": "^3.9.4",
     "underscore": "^1.10.2",

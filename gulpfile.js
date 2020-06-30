@@ -11,7 +11,8 @@ var	rename      	= require('gulp-rename');
 var	autoprefixer	= require('gulp-autoprefixer');
 var	notify      	= require("gulp-notify");
 var	imagemin    	= require('gulp-imagemin');
-var pngquant    	= require('imagemin-pngquant');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
 var cache       	= require('gulp-cache');
 var	del         	= require('del');
 var	svgstore		= require('gulp-svgstore');
@@ -36,6 +37,7 @@ gulp.task('browser-sync', function() {
 	});
 });
 
+
 // Конвертация SCSS в CSS
 gulp.task('sass', function() {
 	return gulp.src('source/scss/**/*.scss') // Берем все .scss файлы в данной папке
@@ -48,17 +50,28 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({stream: true})); // Обновляем страницу
 });
 
+
+
+  
+
+
 // Обработка изображений
 gulp.task('img', function() {
   return gulp.src('source/img/**/*') // Берем все файлы из папки img
-	.pipe(cache(imagemin({
-		interlaced: true,
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	})))
+	.pipe(imagemin([
+		imagemin.gifsicle({interlaced: true}),
+		imageminJpegtran({
+		  progressive: true,
+		  max: 90,
+		  min: 85
+		}),
+		imageminPngquant({quality: [0.6, 0.8]}),
+		imagemin.svgo({plugins: [{removeViewBox: true}]})
+	]))
 	.pipe(gulp.dest('build/img')) // Кладем обработанные изображения в папку сборки
-	.pipe(webp()) // Создаем webp версии всех .png, .jpg, .tiff изображений
+	.pipe(webp({
+		quality: 95
+	})) // Создаем webp версии всех .png, .jpg, .tiff изображений
 	.pipe(gulp.dest('build/img')) // Кладем webp версии изображений в папку сборки
 	.pipe(browserSync.reload({stream: true})); // Обновляем страницу
 });
@@ -70,7 +83,7 @@ gulp.task('img-photos', function() {
 		  interlaced: true,
 		  progressive: true,
 		  svgoPlugins: [{removeViewBox: false}],
-		  use: [pngquant()]
+		  use: [imageminPngquant()]
 	  })))
 	  .pipe(gulp.dest('build/photos')) // Кладем обработанные изображения в папку сборки
 	  .pipe(webp()) // Создаем webp версии всех .png, .jpg, .tiff изображений
@@ -81,7 +94,7 @@ gulp.task('img-photos', function() {
 // Объединяем файлы js
 gulp.task('concat', function(cb) {
 	return gulp.src([
-		'source/libs/jquery/jquery-3.4.1.min.js',
+		// 'source/libs/jquery/jquery-3.4.1.min.js',
 		'source/js/script.js' // Всегда в конце
 		])
 	.pipe(concat('script.min.js')) // Название собраного .js-файла

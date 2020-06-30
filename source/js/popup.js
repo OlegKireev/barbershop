@@ -8,6 +8,8 @@
 // - В секции-блоки модальных окон поместить элемент (кнопку/ссылку) при нажатии на которую произойдет
 // закрытие модального окна и добавить ей класс ('popup-close');
 //              <section id="#login"><button class="popup-close" type="button">Закрыть</button><section>
+// - Элементам с position:fixed (напр. меню) необходимо добавить класс "lock-padding"
+//              <nav class="menu lock-padding">...</nav>
 
 
 (() => {
@@ -72,21 +74,19 @@
     }
     
     function onEscCloseModal(evt) {
-        if (evt.keyCode === 27) {
+        if (evt.keyCode === ESC_BTN) {
             const popupActive = document.querySelector('.popup--opened');
             popupClose(popupActive);
         }
     }
     
     function showPopup(currentPopup) {
-        // currentPopup.classList.remove('visually-hidden');
         currentPopup.classList.add('popup--opened');
         document.addEventListener(`keydown`, onEscCloseModal);
     }
     
     function hidePopup(popupActive) {
         popupActive.classList.remove('popup--opened');
-        // popupActive.classList.add('visually-hidden');
         document.removeEventListener(`keydown`, onEscCloseModal);
     }
     
@@ -96,7 +96,7 @@
     
         if (lockPadding.length > 0) {
             lockPadding.forEach((item) => {
-                item.getElementsByClassName.paddingRight = lockPaddingValue;
+                item.style.paddingRight = lockPaddingValue;
             })
         }
     
@@ -108,8 +108,9 @@
     
     function bodyUnlock() {
         setTimeout(() => {
-            if (lockPadding > 0) {
+            if (lockPadding.length > 0) {
                 lockPadding.forEach((item) => {
+                console.log(item);
                     item.style.paddingRight = '0px';
                 })
             }

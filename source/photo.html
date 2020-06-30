@@ -35,7 +35,7 @@
 					</a>
 				</div>
 
-				<div class="header__menu menu">
+				<div class="header__menu menu lock-padding">
 	
 					<div class="menu__current">Работы</div>
 					<button class="menu__button">Показать меню<span class="menu__icon"></span></button>
@@ -44,7 +44,7 @@
 							<li><a class="menu__link" href="index.html">Главная</a></li>
 							<li><a class="menu__link menu__link--active">Наши работы</a></li>
 							<li><a class="menu__link" href="form.html">Записаться</a></li>
-							<li><a class="menu__link" href="#">Контакты</a></li>
+							<li><a class="menu__link" href="http://vk.com/flucky" target="_blank" rel="noopener">Контакты</a></li>
 							<li>
 
 								<ul class="menu__login">
@@ -84,8 +84,11 @@
 						<article class="works__card works__card--best haircut haircut--best">
 							<div class="haircut__wrapper haircut__wrapper--photo">
 								<picture>
-									<source media="(min-width: 1200px)" srcset="img/works-1-desktop.jpg">
-									<source media="(min-width: 768px)" srcset="img/works-1-tablet.jpg">
+									<source media="(min-width: 1200px)" type="image/webp" srcset="img/works-1-desktop.webp">
+									<source media="(min-width: 1200px)" type="image/jpeg" srcset="img/works-1-desktop.jpg">
+									<source media="(min-width: 768px)" type="image/webp" srcset="img/works-1-tablet.webp">
+									<source media="(min-width: 768px)" type="image/jpeg" srcset="img/works-1-tablet.jpg">
+									<source media="(max-width: 767px)" type="image/webp" srcset="img/works-1-mobile.webp">
 									<img class="haircut__photo" src="img/works-1-mobile.jpg" alt="Фото довольного клиента">
 								</picture>
 								<div class="haircut__best">Работа месяца</div>
@@ -123,8 +126,11 @@
 						<article class="works__card haircut">
 							<div class="haircut__wrapper haircut__wrapper--photo">
 								<picture>
-									<source media="(min-width: 1200px)" srcset="img/works-2-desktop.jpg">
-									<source media="(min-width: 768px)" srcset="img/works-2-tablet.jpg">
+									<source media="(min-width: 1200px)" type="image/webp" srcset="img/works-2-desktop.webp">
+									<source media="(min-width: 1200px)" type="image/jpeg" srcset="img/works-2-desktop.jpg">
+									<source media="(min-width: 768px)" type="image/webp" srcset="img/works-2-tablet.webp">
+									<source media="(min-width: 768px)" type="image/jpeg" srcset="img/works-2-tablet.jpg">
+									<source media="(max-width: 767px)" type="image/webp" srcset="img/works-2-mobile.webp">
 									<img class="haircut__photo" src="img/works-2-mobile.jpg" alt="Фото довольного клиента">
 								</picture>
 								<div class="haircut__best">Работа месяца</div>
@@ -163,8 +169,11 @@
 						<article class="works__card haircut">
 							<div class="haircut__wrapper haircut__wrapper--photo">
 								<picture>
-									<source media="(min-width: 1200px)" srcset="img/works-3-desktop.jpg">
-									<source media="(min-width: 768px)" srcset="img/works-3-tablet.jpg">
+									<source media="(min-width: 1200px)" type="image/webp" srcset="img/works-3-desktop.webp">
+									<source media="(min-width: 1200px)" type="image/jpeg" srcset="img/works-3-desktop.jpg">
+									<source media="(min-width: 768px)" type="image/webp" srcset="img/works-3-tablet.webp">
+									<source media="(min-width: 768px)" type="image/jpeg" srcset="img/works-3-tablet.jpg">
+									<source media="(max-width: 767px)" type="image/webp" srcset="img/works-3-mobile.webp">
 									<img class="haircut__photo" src="img/works-3-mobile.jpg" alt="Фото довольного клиента">
 								</picture>
 								<div class="haircut__best">Работа месяца</div>
@@ -203,8 +212,11 @@
 						<article class="works__card haircut">
 							<div class="haircut__wrapper haircut__wrapper--photo">
 								<picture>
-									<source media="(min-width: 1200px)" srcset="img/works-4-desktop.jpg">
-									<source media="(min-width: 768px)" srcset="img/works-4-tablet.jpg">
+									<source media="(min-width: 1200px)" type="image/webp" srcset="img/works-4-desktop.webp">
+									<source media="(min-width: 1200px)" type="image/jpeg" srcset="img/works-4-desktop.jpg">
+									<source media="(min-width: 768px)" type="image/webp" srcset="img/works-4-tablet.webp">
+									<source media="(min-width: 768px)" type="image/jpeg" srcset="img/works-4-tablet.jpg">
+									<source media="(max-width: 767px)" type="image/webp" srcset="img/works-4-mobile.webp">
 									<img class="haircut__photo" src="img/works-4-mobile.jpg" alt="Фото довольного клиента">
 								</picture>
 								<div class="haircut__best">Работа месяца</div>
@@ -311,19 +323,19 @@
 				<div class="footer__socials social">
 					<span class="social__text">Давайте дружить!</span>
 					<div class="social__wrapper">
-						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank">
+						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank" rel="noopener">
 							Открыть нашу страницу "В контакте"
 							<svg class="social__icon social__icon--vk" width="35" height="35">
 								<use xlink:href="#socials-vk"></use>
 							</svg>
 						</a>
-						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank">
+						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank" rel="noopener">
 							Открыть нашу страницу на "Фейсбук"
 							<svg class="social__icon social__icon--facebook" width="35" height="35">
 								<use xlink:href="#socials-facebook"></use>
 							</svg>
 						</a>
-						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank">
+						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank" rel="noopener">
 							Открыть наш профиль "Инстаграм"
 							<svg class="social__icon social__icon--instagram" width="35" height="35">
 								<use xlink:href="#socials-instagram"></use>
@@ -333,8 +345,8 @@
 				</div>
 	
 				<div class="footer__development">
-					<footer class="footer__text">Разработано:</footer>
-					<a class="footer__link" href="https://htmlacademy.ru/" target="_blank">Html academy</a>
+					<p class="footer__text">Разработано:</p>
+					<a class="footer__link" href="https://htmlacademy.ru/" target="_blank" rel="noopener">Html academy</a>
 				</div>
 
 			</div>		
@@ -381,20 +393,6 @@
 		</div>
 		
 	</section>
-
-	<template id="news__template">
-		<li class="news__item">
-			<article class="news__card">
-				<div class="news__date">
-					<span class="news__day">9</span>
-					<span class="news__month">сент</span>
-				</div>
-				<p class="news__text">
-					Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!
-				</p>
-			</article>
-		</li>
-	</template>
 
 	<script src="js/menu.js"></script>
 	<script src="js/popup.js"></script>

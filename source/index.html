@@ -35,7 +35,7 @@
 					</a>
 				</div>
 
-				<div class="header__menu menu">
+				<div class="header__menu menu lock-padding">
 	
 					<div class="menu__current">Главная</div>
 					<button class="menu__button">Показать меню<span class="menu__icon"></span></button>
@@ -44,7 +44,7 @@
 							<li><a class="menu__link menu__link--active">Главная</a></li>
 							<li><a class="menu__link" href="photo.html">Наши работы</a></li>
 							<li><a class="menu__link" href="form.html">Записаться</a></li>
-							<li><a class="menu__link" href="#">Контакты</a></li>
+							<li><a class="menu__link" href="http://vk.com/flucky" target="_blank" rel="noopener">Контакты</a></li>
 							<li>
 								<ul class="menu__login">
 									<li>
@@ -104,6 +104,8 @@
 
 		<section class="advantages">
 
+			<h2 class="visually-hidden">Преимущества</h2>
+
 			<p class="advantages__footnote">* - приведённые данные ложь</p>
 
 			<ul class="advantages__list">
@@ -125,9 +127,8 @@
 						</svg>
 						<div class="advantage__wrapper">
 							<h2 class="advantage__heading">Круто</h2>
-							<p class="advantage__text">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.
+							<p class="advantage__text">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.</p>
 						</div>
-						</p>
 					</article>
 				</li>
 				<li class="advantages__item">
@@ -147,9 +148,9 @@
 			
 
 			<div class="advantages__dots">
-				<button class="advantages__dot advantages__dot--active"></button>
-				<button class="advantages__dot"></button>
-				<button class="advantages__dot"></button>
+				<button class="advantages__dot advantages__dot--active" aria-label="Слайд первого преимущества"></button>
+				<button class="advantages__dot" aria-label="Слайд второго преимущества"></button>
+				<button class="advantages__dot" aria-label="Слайд третьего преимущества"></button>
 			</div>
 
 		</section>
@@ -173,7 +174,7 @@
 			<section class="reviews ">
 
 				<h2 class="reviews__heading">Отзывы о нас</h2>
-				<button class="reviews__button button" type="button">Оставить свой</button>
+				<button class="reviews__button button popup-link" href="#new-comment" type="button">Оставить свой</button>
 				<div class="reviews__wrapper">
 					<button class="reviews__button reviews__button--previous button" type="button">Предыдущий отзыв</button>
 					<ul class="reviews__list">
@@ -228,9 +229,9 @@
 				</div>
 				
 				<div class="reviews__dots">
-					<button class="reviews__dot reviews__dot--active"></button>
-					<button class="reviews__dot"></button>
-					<button class="reviews__dot"></button>
+					<button class="reviews__dot reviews__dot--active" aria-label="Слайд первого коментария"></button>
+					<button class="reviews__dot" aria-label="Слайд второго коментария"></button>
+					<button class="reviews__dot" aria-label="Слайд третьего коментария"></button>
 				</div>
 
 			</section>
@@ -238,7 +239,7 @@
 		</main>
 
 
-		<footer class="footer">
+		<footer class="footer" id="footer">
 			<div class="footer__inner">
 
 				<div class="footer__contacts">
@@ -251,19 +252,19 @@
 				<div class="footer__socials social">
 					<span class="social__text">Давайте дружить!</span>
 					<div class="social__wrapper">
-						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank">
+						<a class="social__link social__link--vk" href="https://vk.com/" target="_blank" rel="noopener">
 							Открыть нашу страницу "В контакте"
 							<svg class="social__icon social__icon--vk" width="35" height="35">
 								<use xlink:href="#socials-vk"></use>
 							</svg>
 						</a>
-						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank">
+						<a class="social__link social__link--fb" href="https://facebook.com/" target="_blank" rel="noopener">
 							Открыть нашу страницу на "Фейсбук"
 							<svg class="social__icon social__icon--facebook" width="35" height="35">
 								<use xlink:href="#socials-facebook"></use>
 							</svg>
 						</a>
-						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank">
+						<a class="social__link social__link--ig" href="https://instagram.com/" target="_blank" rel="noopener">
 							Открыть наш профиль "Инстаграм"
 							<svg class="social__icon social__icon--instagram" width="35" height="35">
 								<use xlink:href="#socials-instagram"></use>
@@ -273,8 +274,8 @@
 				</div>
 	
 				<div class="footer__development">
-					<footer class="footer__text">Разработано:</footer>
-					<a class="footer__link" href="https://htmlacademy.ru/" target="_blank">Html academy</a>
+					<p class="footer__text">Разработано:</p>
+					<a class="footer__link" href="https://htmlacademy.ru/" target="_blank" rel="noopener">Html academy</a>
 				</div>
 
 			</div>		
@@ -317,6 +318,24 @@
 					</div>
 				</form>
 
+			</div>
+		</div>
+		
+	</section>
+
+	<section class="new-comment popup secondary" id="new-comment">
+		<div class="popup__body">
+			<div class="popup__content">
+				<h2 class="new-comment__heading">Ваш коментарий</h2>
+				<form action="https://echo.htmlacademy.ru" method="POST">
+					<label for="new-comment__name">Ваше имя</label>
+					<input class="new-comment__name" name="comment-name" id="new-comment__name" type="text" placeholder=" " required>
+					<label for="new-comment__text">Коментарий</label>
+					<textarea class="new-comment__text" name="comment-text" id="new-comment__text" placeholder=" "  required></textarea>
+					
+					<button class="popup__button button" type="submit">Отправить</button>
+				</form>
+				<button class="popup__buttton popup__button--close popup-close button" type="button">Закрыть<span> модальное окно</span></button>
 			</div>
 		</div>
 		

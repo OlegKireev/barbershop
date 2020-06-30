@@ -1,0 +1,39 @@
+.new-comment .popup__body {
+    padding: 20px 10px;
+}
+
+.new-comment .popup__content {
+    max-width: 600px;
+}
+
+.new-comment__heading {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include tablet {
+        font-size: 40px;
+        // text-align: left;
+    }
+
+    @include desktop {
+        font-size: 40px;
+    }
+}
+
+.new-comment label {
+    font-size: 24px;
+}
+
+.new-comment textarea {
+    min-height: 300px;
+}
+
+.new-comment__name {
+    margin-bottom: 10px;
+}
+
+.new-comment__text {
+    margin-bottom: 20px;
+}

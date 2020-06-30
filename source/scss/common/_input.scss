@@ -162,3 +162,26 @@ input[type="checkbox"]:checked + label {
         opacity: 1;
     }
 }
+
+
+.input__error {
+    display: none;
+
+    text-align: center;
+    // width  : 100%;
+    padding: 0;
+    margin-top: -6px;
+    margin-bottom: 6px;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+}
+  
+.input__error--active {
+    padding: 10px;
+    display: block;
+}

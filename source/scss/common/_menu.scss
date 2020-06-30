@@ -1,6 +1,24 @@
 
 .menu {
     position: relative;
+    z-index: 10;
+
+    &--sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    @include tablet {
+        position: fixed;
+        width: 100%;
+    }
+
+    @include desktop {
+        position: relative;
+    }
 }
 
 .menu__link {

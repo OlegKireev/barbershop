@@ -6,21 +6,21 @@
     padding-left: $mobile-padding;
     padding-right: $mobile-padding;
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 110px;
-        background: url('../img/icon/black-triangle.svg') 50% 50% no-repeat;
-        background-size: cover;
-        pointer-events: none;
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 110px;
+    //     background: url('../img/icon/black-triangle.svg') 50% 50% no-repeat;
+    //     background-size: cover;
+    //     pointer-events: none;
 
-        @include tablet {
-            display: none;
-        }
-    }
+    //     @include tablet {
+    //         display: none;
+    //     }
+    // }
 
     @include tablet {
         display: flex;

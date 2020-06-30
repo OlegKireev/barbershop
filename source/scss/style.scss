@@ -21,6 +21,7 @@
 @import "index/_news.scss";
 @import "index/_reviews.scss";
 @import "index/_review.scss";
+@import "index/new-comment";
 
 // photo.html
 @import "photo/_works.scss";
@@ -31,3 +32,6 @@
 // form.html
 @import "form/_form.scss";
 @import "form/enroll";
+
+// thanks.html
+@import "thanks/_thanks.scss";
